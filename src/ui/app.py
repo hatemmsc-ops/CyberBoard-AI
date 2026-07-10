@@ -12,7 +12,142 @@ from src.pipeline.vector_store import confidence_from_result
 
 st.set_page_config(page_title="CyberBoard-AI", page_icon="🏛️", layout="wide")
 
+NAVY = "#121A2F"
+GOLD = "#C9A84C"
+MUTED = "#8fa0bd"
+
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;600;700;800&display=swap');
+
+html, body, [class*="css"], .stMarkdown, .stButton, .stTextInput {
+    font-family: 'Exo', sans-serif;
+}
+
+/* Hero banner */
+.cb-hero {
+    background: linear-gradient(135deg, #121A2F 0%, #1b2a4a 55%, #0B1120 100%);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    border-radius: 14px;
+    padding: 26px 32px 22px 32px;
+    margin-bottom: 22px;
+}
+.cb-hero h1 {
+    color: #FFFFFF;
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin: 0 0 2px 0;
+    padding: 0;
+}
+.cb-hero h1 .gold { color: #C9A84C; }
+.cb-hero p {
+    color: #8fa0bd;
+    margin: 0;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* Result cards */
+.cb-card {
+    background: #121A2F;
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    border-left: 4px solid #C9A84C;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+}
+.cb-card .cb-meta { margin-bottom: 8px; }
+.cb-chip {
+    display: inline-block;
+    background: rgba(201, 168, 76, 0.12);
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    color: #C9A84C;
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-right: 8px;
+}
+.cb-chip.ticker { background: #C9A84C; color: #121A2F; font-weight: 800; }
+.cb-card .cb-text {
+    color: #c7d2e4;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-top: 6px;
+}
+
+/* Confidence pills */
+.cb-pill {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 2px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    float: right;
+}
+.cb-pill.high { background: rgba(46, 204, 113, 0.15); color: #2ecc71; border: 1px solid rgba(46,204,113,0.4); }
+.cb-pill.mid  { background: rgba(241, 196, 15, 0.12); color: #f1c40f; border: 1px solid rgba(241,196,15,0.4); }
+.cb-pill.low  { background: rgba(231, 76, 60, 0.12); color: #e74c3c; border: 1px solid rgba(231,76,60,0.4); }
+
+/* Trace stage cards */
+.cb-stage {
+    background: #0f1729;
+    border: 1px solid rgba(143, 160, 189, 0.15);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+}
+.cb-stage .cb-stage-title {
+    color: #C9A84C;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+.cb-stage .cb-stage-body { color: #c7d2e4; font-size: 0.85rem; }
+
+/* Sidebar polish */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #121A2F 0%, #0B1120 100%);
+    border-right: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Metric styling */
+[data-testid="stMetricValue"] { color: #C9A84C; }
+</style>
+""", unsafe_allow_html=True)
+
 TICKERS = list(config.COMPANIES.keys())
+
+
+def hero(title_white: str, title_gold: str, subtitle: str):
+    st.markdown(
+        f'<div class="cb-hero"><h1>{title_white} <span class="gold">{title_gold}</span></h1>'
+        f'<p>{subtitle}</p></div>',
+        unsafe_allow_html=True)
+
+
+def confidence_pill(confidence: float) -> str:
+    cls = "high" if confidence >= 0.7 else ("mid" if confidence >= 0.4 else "low")
+    return f'<span class="cb-pill {cls}">{confidence:.0%} confidence</span>'
+
+
+def result_card(meta: dict, confidence: float, text: str):
+    import html
+    snippet = html.escape(text[:400] + ("..." if len(text) > 400 else ""))
+    section = html.escape(meta["section"].replace("_", " "))
+    st.markdown(
+        f'<div class="cb-card">'
+        f'<div class="cb-meta">'
+        f'<span class="cb-chip ticker">{meta["ticker"]}</span>'
+        f'<span class="cb-chip">{meta["filing_type"]} · {meta["filing_date"]}</span>'
+        f'<span class="cb-chip">{section}</span>'
+        f'{confidence_pill(confidence)}'
+        f'</div>'
+        f'<div class="cb-text">{snippet}</div>'
+        f'</div>',
+        unsafe_allow_html=True)
 
 
 @st.cache_resource
@@ -39,14 +174,15 @@ def retrieve(query: str, ticker: str, k: int = 5, with_trace: bool = False):
 
 def render_trace(trace: list):
     """Reasoning trace visualization: how the pipeline produced these results."""
-    st.markdown("#### Retrieval reasoning trace")
     for step in trace:
         stage = step.get("stage", "?")
         if step.get("skipped"):
-            st.markdown(f"**{stage}** — skipped")
+            st.markdown(f'<div class="cb-stage"><div class="cb-stage-title">{stage}</div>'
+                        f'<div class="cb-stage-body">Skipped</div></div>', unsafe_allow_html=True)
             continue
         with st.container():
-            st.markdown(f"**{stage}**")
+            st.markdown(f'<div class="cb-stage"><div class="cb-stage-title">{stage}</div></div>',
+                        unsafe_allow_html=True)
             if "sparse_candidates" in step:
                 cols = st.columns(3)
                 cols[0].metric("Sparse candidates (BM25)", step["sparse_candidates"])
@@ -82,20 +218,27 @@ def run_agent(question: str):
 
 
 # Sidebar
-st.sidebar.title("CyberBoard-AI")
-st.sidebar.caption("AI Advisory Board Agent for Corporate Governance")
+st.sidebar.markdown(
+    '<h2 style="margin-bottom:0;">🏛️ Cyber<span style="color:#C9A84C;">Board</span>-AI</h2>'
+    '<p style="color:#8fa0bd; font-size:0.78rem; letter-spacing:1px; text-transform:uppercase;">'
+    'AI Advisory Board Agent</p>',
+    unsafe_allow_html=True)
 
 mode = st.sidebar.radio("Mode", ["Ask Agent", "Search Filings", "Evaluation Results"])
 selected_ticker = st.sidebar.selectbox("Company", ["All"] + TICKERS)
 
 st.sidebar.markdown("---")
-st.sidebar.markdown(f"**Data:** {load_store().collection.count():,} chunks")
-st.sidebar.markdown(f"**Companies:** {len(TICKERS)}")
-st.sidebar.markdown(f"**Azure:** {'Connected' if config.azure_available() else 'Not configured'}")
+azure_ok = config.azure_available()
+st.sidebar.markdown(
+    f'<span class="cb-chip">{load_store().collection.count():,} chunks</span>'
+    f'<span class="cb-chip">{len(TICKERS)} companies</span><br><br>'
+    f'<span class="cb-pill {"high" if azure_ok else "low"}" style="float:none;">'
+    f'Azure {"connected" if azure_ok else "not configured"}</span>',
+    unsafe_allow_html=True)
 
 # Main content
 if mode == "Ask Agent":
-    st.header("Ask the Advisory Board")
+    hero("Ask the", "Advisory Board", "Board level answers grounded in SEC filings")
 
     if not config.azure_available():
         st.warning("Azure OpenAI not configured. Add credentials to .env to enable the agent.")
@@ -114,14 +257,10 @@ if mode == "Ask Agent":
             with st.expander("View retrieved sources"):
                 results = retrieve(question, ticker)
                 for i, r in enumerate(results):
-                    meta = r["metadata"]
-                    confidence = confidence_from_result(r)
-                    st.markdown(f"**Source {i+1}** | {meta['section']} | {meta['filing_type']} {meta['filing_date']} | Confidence: {confidence:.0%}")
-                    st.text(r["text"][:500])
-                    st.divider()
+                    result_card(r["metadata"], confidence_from_result(r), r["text"])
 
 elif mode == "Search Filings":
-    st.header("Search SEC Filings")
+    hero("Search", "SEC Filings", "Hybrid retrieval with cross encoder reranking")
 
     col1, col2 = st.columns([3, 1])
     with col1:
@@ -138,26 +277,15 @@ elif mode == "Search Filings":
 
         st.markdown(f"**{len(results)} results**" + (f" for {ticker}" if ticker else ""))
 
-        for i, r in enumerate(results):
-            meta = r["metadata"]
-            confidence = confidence_from_result(r)
-
-            with st.container():
-                cols = st.columns([1, 1, 1, 1])
-                cols[0].markdown(f"**{meta['ticker']}**")
-                cols[1].markdown(f"{meta['filing_type']} ({meta['filing_date']})")
-                cols[2].markdown(f"Section: {meta['section']}")
-                cols[3].markdown(f"Confidence: {confidence:.0%}")
-
-                st.text(r["text"][:400] + "..." if len(r["text"]) > 400 else r["text"])
-                st.divider()
+        for r in results:
+            result_card(r["metadata"], confidence_from_result(r), r["text"])
 
         if show_trace and trace:
             with st.expander("Retrieval reasoning trace", expanded=True):
                 render_trace(trace)
 
 elif mode == "Evaluation Results":
-    st.header("Evaluation Results")
+    hero("Evaluation", "Results", "FinanceBench retrieval accuracy and ablation study")
 
     eval_path = config.DATA_DIR / "financebench" / "eval_results.json"
     ablation_path = config.DATA_DIR / "financebench" / "ablation_results.json"
