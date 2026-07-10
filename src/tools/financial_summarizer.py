@@ -1,0 +1,47 @@
+"""Tool 1: Summarize financial data from retrieved filing chunks."""
+
+from agents import function_tool
+
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+
+@function_tool
+def financial_summarizer(query: str, ticker: str) -> str:
+    """Retrieve and summarize financial information from SEC filings for a given company.
+    Use this tool when the user asks about revenue, earnings, financial performance,
+    cash flow, balance sheet items, or any quantitative financial data.
+
+    Args:
+        query: The financial question to answer.
+        ticker: Stock ticker symbol (e.g. AAPL, MSFT).
+    """
+    from src.pipeline.vector_store import HybridStore, confidence_from_result
+    from src.pipeline.embedder import embed_batch, get_client
+    import config
+
+    store = HybridStore()
+    if store.collection.count() == 0:
+        store.rebuild_bm25_from_collection()
+
+    query_emb = None
+    if config.azure_available():
+        query_emb = embed_batch([query], get_client())[0]
+
+    if not store.bm25:
+        store.rebuild_bm25_from_collection()
+
+    results = store.search(query, query_embedding=query_emb, k=5, ticker=ticker.upper())
+
+    if not results:
+        return f"No financial data found for {ticker} related to: {query}"
+
+    context_parts = []
+    for i, r in enumerate(results):
+        meta = r["metadata"]
+        confidence = confidence_from_result(r)
+        source = f"{meta['ticker']} {meta['filing_type']} ({meta['filing_date']}) - {meta['section']} (confidence: {confidence:.0%})"
+        context_parts.append(f"[Source {i+1}: {source}]\n{r['text']}")
+
+    return f"Retrieved {len(results)} relevant passages for {ticker}:\n\n" + "\n\n---\n\n".join(context_parts)
