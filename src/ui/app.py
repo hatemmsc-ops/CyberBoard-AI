@@ -24,13 +24,51 @@ def load_store():
     return store
 
 
-def retrieve(query: str, ticker: str, k: int = 5):
+def retrieve(query: str, ticker: str, k: int = 5, with_trace: bool = False):
     store = load_store()
     query_emb = None
     if config.azure_available():
         from src.pipeline.embedder import embed_batch, get_client
         query_emb = embed_batch([query], get_client())[0]
-    return store.search(query, query_embedding=query_emb, k=k, ticker=ticker)
+    trace = [] if with_trace else None
+    results = store.search(query, query_embedding=query_emb, k=k, ticker=ticker, trace=trace)
+    if with_trace:
+        return results, trace
+    return results
+
+
+def render_trace(trace: list):
+    """Reasoning trace visualization: how the pipeline produced these results."""
+    st.markdown("#### Retrieval reasoning trace")
+    for step in trace:
+        stage = step.get("stage", "?")
+        if step.get("skipped"):
+            st.markdown(f"**{stage}** — skipped")
+            continue
+        with st.container():
+            st.markdown(f"**{stage}**")
+            if "sparse_candidates" in step:
+                cols = st.columns(3)
+                cols[0].metric("Sparse candidates (BM25)", step["sparse_candidates"])
+                cols[1].metric("Dense candidates", step["dense_candidates"],
+                               help="0 when Azure OpenAI embeddings are not configured")
+                cols[2].metric("Company filter", step["ticker_filter"])
+                if step["top_sparse"]:
+                    st.caption("Top BM25 matches: " + ", ".join(
+                        f"{t['id']} ({t['bm25']})" for t in step["top_sparse"][:3]))
+            elif "alpha" in step:
+                st.caption(f"Fusion: {step['formula']}")
+                cols = st.columns(2)
+                cols[0].metric("Candidate pool", step["pool_size"])
+                cols[1].metric("Kept for reranking", step["kept_for_rerank"])
+            elif "rerank_scores" in step:
+                st.caption(f"Model: {step['model']}")
+                changed = step["order_before"] != step["order_after"]
+                st.caption("Reranker changed the order: " + ("yes" if changed else "no"))
+                st.table([
+                    {"Rank": i + 1, "Chunk": r["id"], "Logit": r["logit"], "Confidence": f"{r['confidence']:.0%}"}
+                    for i, r in enumerate(step["rerank_scores"])
+                ])
 
 
 def run_agent(question: str):
@@ -91,9 +129,12 @@ elif mode == "Search Filings":
     with col2:
         k = st.slider("Results", 3, 20, 5)
 
+    show_trace = st.checkbox("Show retrieval reasoning trace", value=True,
+                             help="Explainability: see how each stage of the pipeline produced these results")
+
     if query:
         ticker = selected_ticker if selected_ticker != "All" else None
-        results = retrieve(query, ticker, k=k)
+        results, trace = retrieve(query, ticker, k=k, with_trace=True)
 
         st.markdown(f"**{len(results)} results**" + (f" for {ticker}" if ticker else ""))
 
@@ -110,6 +151,10 @@ elif mode == "Search Filings":
 
                 st.text(r["text"][:400] + "..." if len(r["text"]) > 400 else r["text"])
                 st.divider()
+
+        if show_trace and trace:
+            with st.expander("Retrieval reasoning trace", expanded=True):
+                render_trace(trace)
 
 elif mode == "Evaluation Results":
     st.header("Evaluation Results")
