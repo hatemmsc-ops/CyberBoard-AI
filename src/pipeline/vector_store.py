@@ -81,8 +81,13 @@ class HybridStore:
             self._build_bm25(result["ids"], result["documents"])
 
     def search(self, query: str, query_embedding: list[float] = None, k: int = 10,
-               alpha: float = config.HYBRID_ALPHA, rerank: bool = True, ticker: str = None) -> list[dict]:
-        """Hybrid search: dense + sparse, optionally reranked."""
+               alpha: float = config.HYBRID_ALPHA, rerank: bool = True, ticker: str = None,
+               trace: list = None) -> list[dict]:
+        """Hybrid search: dense + sparse, optionally reranked.
+
+        Pass a list as `trace` to capture per-stage retrieval info for
+        explainability (each stage appended as a dict).
+        """
         where_filter = {"ticker": ticker} if ticker else None
 
         dense_scores = {}
@@ -104,6 +109,19 @@ class HybridStore:
                 ranked_idxs = np.argsort(bm25_scores)[::-1][:k * 2]
             for idx in ranked_idxs:
                 sparse_scores[self.bm25_ids[idx]] = float(bm25_scores[idx])
+
+        if trace is not None:
+            trace.append({
+                "stage": "1. Candidate scoring",
+                "dense_candidates": len(dense_scores),
+                "sparse_candidates": len(sparse_scores),
+                "dense_available": bool(dense_scores),
+                "ticker_filter": ticker or "none",
+                "top_sparse": [
+                    {"id": doc_id, "bm25": round(score, 2)}
+                    for doc_id, score in sorted(sparse_scores.items(), key=lambda x: -x[1])[:5]
+                ],
+            })
 
         # normalize scores to [0, 1]
         def normalize(scores: dict) -> dict:
@@ -127,6 +145,19 @@ class HybridStore:
 
         top_ids = sorted(combined, key=combined.get, reverse=True)[:k * 2 if rerank else k]
 
+        if trace is not None:
+            trace.append({
+                "stage": "2. Hybrid fusion",
+                "alpha": alpha,
+                "formula": f"{alpha} x dense + {round(1 - alpha, 2)} x sparse (scores normalized to 0..1)",
+                "pool_size": len(all_ids),
+                "kept_for_rerank": len(top_ids),
+                "top_fused": [
+                    {"id": doc_id, "fused_score": round(combined[doc_id], 3)}
+                    for doc_id in top_ids[:5]
+                ],
+            })
+
         # fetch documents for top results
         if not top_ids:
             return []
@@ -140,7 +171,22 @@ class HybridStore:
         ]
 
         if rerank and candidates:
+            pre_order = [c["id"] for c in candidates[:5]]
             candidates = self._rerank(query, candidates, k)
+            if trace is not None:
+                trace.append({
+                    "stage": "3. Cross encoder reranking",
+                    "model": config.RERANKER_MODEL,
+                    "order_before": pre_order,
+                    "order_after": [c["id"] for c in candidates[:5]],
+                    "rerank_scores": [
+                        {"id": c["id"], "logit": round(c["rerank_score"], 2),
+                         "confidence": round(confidence_from_result(c), 3)}
+                        for c in candidates[:5]
+                    ],
+                })
+        elif trace is not None:
+            trace.append({"stage": "3. Cross encoder reranking", "skipped": True})
 
         return candidates[:k]
 
