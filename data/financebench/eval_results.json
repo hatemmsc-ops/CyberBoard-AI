@@ -1,0 +1,2327 @@
+[
+  {
+    "question_id": "financebench_id_06655",
+    "company": "Amazon",
+    "ticker": "AMZN",
+    "question": "What is Amazon's FY2017 days payable outstanding (DPO)? DPO is defined as: 365 * (average accounts payable between FY2016 and FY2017) / (FY2017 COGS + change in inventory between FY2016 and FY2017). Round your answer to two decimal places. Address the question by using the line items and information shown within the balance sheet and the P&L statement.",
+    "gold_answer": "93.86",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-31",
+        "score": -3.0545272827148438
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "score": -6.207296848297119
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-02",
+        "score": -6.85007381439209
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-31",
+        "score": -6.980343818664551
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -7.035420894622803
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "score": -7.141861915588379
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -7.512135982513428
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-30",
+        "score": -7.569231986999512
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "score": -7.597860336303711
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-30",
+        "score": -7.597860336303711
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_08135",
+    "company": "Amazon",
+    "ticker": "AMZN",
+    "question": "What is Amazon's year-over-year change in revenue from FY2016 to FY2017 (in units of percents and round to one decimal place)? Calculate what was asked by utilizing the line items clearly shown in the statement of income.",
+    "gold_answer": "30.8%",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-07",
+        "score": -1.4763460159301758
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-30",
+        "score": -5.208477020263672
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -5.299056053161621
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-02",
+        "score": -5.764874458312988
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-30",
+        "score": -6.012869834899902
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -6.106330871582031
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-07",
+        "score": -6.809684753417969
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -7.534852027893066
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-07",
+        "score": -7.733059406280518
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-02",
+        "score": -8.679596900939941
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_08286",
+    "company": "Amazon",
+    "ticker": "AMZN",
+    "question": "By drawing conclusions from the information stated only in the income statement, what is Amazon's FY2019 net income attributable to shareholders (in USD millions)?",
+    "gold_answer": "$11588.00",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -4.709789752960205
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-07",
+        "score": -4.820306777954102
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -6.576302528381348
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "score": -7.657184600830078
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -7.810842514038086
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-06",
+        "score": -8.537765502929688
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-31",
+        "score": -8.655643463134766
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-31",
+        "score": -9.053519248962402
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "score": -9.393743515014648
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-01",
+        "score": -9.459224700927734
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_03473",
+    "company": "Coca-Cola",
+    "ticker": "KO",
+    "question": "What is the FY2017 return on assets (ROA) for Coca Cola? ROA is defined as: FY2017 net income / (average total assets between FY2016 and FY2017). Round your answer to two decimal places. Give a response to the question by relying on the details shown in the balance sheet and the P&L statement.",
+    "gold_answer": "0.01",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -7.4607133865356445
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -7.63031005859375
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -7.633505344390869
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-23",
+        "score": -7.76198673248291
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -7.799317359924316
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -7.887842178344727
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -7.932190418243408
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -7.952651023864746
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-01",
+        "score": -8.111144065856934
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -8.26148796081543
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_09724",
+    "company": "Coca-Cola",
+    "ticker": "KO",
+    "question": "What is Coca Cola's FY2021 COGS % margin? Calculate what was asked by utilizing the line items clearly shown in the income statement.",
+    "gold_answer": "39.7%",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -4.765742778778076
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-23",
+        "score": -8.98129653930664
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -9.558929443359375
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -9.783723831176758
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -9.813318252563477
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -9.819612503051758
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -9.819612503051758
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -9.873794555664062
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -10.069765090942383
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -10.094006538391113
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_06272",
+    "company": "Coca-Cola",
+    "ticker": "KO",
+    "question": "What is Coca Cola's FY2022 dividend payout ratio (using total cash dividends paid and net income attributable to shareholders)? Round answer to two decimal places. Answer the question asked by assuming you only have access to information clearly displayed in the cash flow statement and the income statement.",
+    "gold_answer": "0.8",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -3.217350721359253
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -4.926578998565674
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -5.750945568084717
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-30",
+        "score": -6.516479969024658
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-01",
+        "score": -6.56601095199585
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-20",
+        "score": -6.59515905380249
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -7.110546588897705
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-20",
+        "score": -8.382396697998047
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-30",
+        "score": -8.783916473388672
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-23",
+        "score": -8.794303894042969
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00956",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "Are JnJ's FY2022 financials that of a high growth company?",
+    "gold_answer": "No, JnJ's FY2022 financials are not of a high growth company as sales grew by 1.3% in FY2022.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -6.285844802856445
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -7.926690101623535
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": -9.303444862365723
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -9.885181427001953
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -9.975335121154785
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -10.073110580444336
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -10.349508285522461
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -10.36197280883789
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -10.532732009887695
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -10.607601165771484
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00669",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "What drove gross margin change as of FY2022 for JnJ? If gross margin is not a useful metric for a company like this, then please state that and explain why.",
+    "gold_answer": "For FY22, JnJ had changes in gross margin due to: One-time COVID-19 vaccine manufacturing exit related costs, Currency impacts in the Pharmaceutical segment, Commodity inflation in the MedTech and Consumer Health segments, partially offset by Supply chain benefits in the Consumer Health segment.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -8.607142448425293
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -8.626680374145508
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -8.721761703491211
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -9.578116416931152
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-22",
+        "score": -9.670169830322266
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": -9.689453125
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-23",
+        "score": -9.706977844238281
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -9.897245407104492
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -9.924383163452148
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -9.930341720581055
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00711",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "Roughly how many times has JnJ sold its inventory in FY2022? Calculate inventory turnover ratio for FY2022; if conventional inventory management is not meaningful for the company then state that and explain why.",
+    "gold_answer": "JnJ sold its inventory 2.7 times in FY2022.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -6.007613658905029
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -6.622713088989258
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -7.3000946044921875
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": -7.392131805419922
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-23",
+        "score": -7.478867530822754
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -7.4812703132629395
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -7.530228614807129
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -7.578474044799805
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-23",
+        "score": -7.956536293029785
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -8.081426620483398
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00651",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "Is growth in JnJ's adjusted EPS expected to accelerate in FY2023?",
+    "gold_answer": "No, rate of growth in adjusted EPS is expected to decelerate slightly from 3.6% in FY2022 to 3.5% in FY2023.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -8.545392990112305
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -8.591297149658203
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -8.760324478149414
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -9.45938777923584
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -9.655868530273438
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -10.306171417236328
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -10.533635139465332
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -10.674322128295898
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -10.699542999267578
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -10.853656768798828
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_01484",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "How did JnJ's US sales growth compare to international sales growth in FY2022?",
+    "gold_answer": "US sales increased 3.0% vs international sales decline of 0.6%.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 3.187556505203247
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 2.344937562942505
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 1.441590428352356
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 0.874732494354248
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": 0.7256895899772644
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-22",
+        "score": 0.668491542339325
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": 0.6682717800140381
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": 0.6589395999908447
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": 0.24538227915763855
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-23",
+        "score": 0.1524321734905243
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_01488",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "Which business segment of JnJ will be treated as a discontinued operation from August 30, 2023 onward?",
+    "gold_answer": "The Consumer Health business segment will be treated as a discontinued operation from August 30, 2023 onward.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 2.0411553382873535
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 1.1590673923492432
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 1.0230638980865479
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 0.7607048749923706
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 0.3844073414802551
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -0.3582274913787842
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -1.3660402297973633
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -1.3816945552825928
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -1.843200445175171
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -2.9017553329467773
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_01490",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "What is the amount of the gain accruing to JnJ as a result of the separation of its Consumer Health business segment, as of August 30, 2023?",
+    "gold_answer": "JnJ will make a gain of approximately $20 billion from the separation of its Consumer Health business segment.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 1.612414002418518
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 1.1454143524169922
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 0.31552770733833313
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -0.6014404296875
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -1.6903592348098755
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -2.0824270248413086
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-22",
+        "score": -2.282526969909668
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -2.478635549545288
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": -2.6782431602478027
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": -2.765451669692993
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_01491",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "What is the amount of the cash proceeds that JnJ realised from the separation of Kenvue (formerly Consumer Health business segment), as of August 30, 2023?",
+    "gold_answer": "JnJ realised $13.2 billion in cash proceeds from the separation of Kenvue.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 4.397243499755859
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 4.134766101837158
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 3.670555591583252
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 3.414074420928955
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 3.331270217895508
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 2.991250514984131
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 2.9604196548461914
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 2.6146044731140137
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-11",
+        "score": 2.455824851989746
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-13",
+        "score": 2.41214656829834
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_01487",
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "question": "Did JnJ's net earnings as a percent of sales increase in Q2 of FY2023 compared to Q2 of FY2022?",
+    "gold_answer": "Yes, net earnings as a percent of sales increased from 20% in Q2 of FY2022 to 20.1% in Q2 of FY2023.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-23",
+        "score": -0.5550181865692139
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -1.197843313217163
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -1.3569265604019165
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-22",
+        "score": -1.6135938167572021
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-23",
+        "score": -1.654097318649292
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-22",
+        "score": -1.7966474294662476
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -1.850024700164795
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-07-24",
+        "score": -2.4318456649780273
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": -2.943873882293701
+      },
+      {
+        "section": "business_overview",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-22",
+        "score": -3.655822992324829
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00299",
+    "company": "JPMorgan",
+    "ticker": "JPM",
+    "question": "Which of JPM's business segments had the lowest net revenue in 2021 Q1?",
+    "gold_answer": "Corporate. Its net revenue was -$473 million.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -1.5607938766479492
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -2.2650203704833984
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -2.637918710708618
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -2.716465473175049
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -2.7719693183898926
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -2.885195732116699
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -3.188243865966797
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": -3.3079140186309814
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -4.759004592895508
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -5.4953813552856445
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_02119",
+    "company": "JPMorgan",
+    "ticker": "JPM",
+    "question": "If JPM went bankrupted by the end by 2021 Q1 and liquidated all of its assets to pay its shareholders, how much could each shareholder get?",
+    "gold_answer": "They could receive $66.56 per share.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -0.9128618836402893
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -1.749287486076355
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -2.3101470470428467
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -2.9855968952178955
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -3.429994821548462
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -3.4673757553100586
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -3.4963526725769043
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -3.633873462677002
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -3.744791030883789
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -4.58272647857666
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00206",
+    "company": "JPMorgan",
+    "ticker": "JPM",
+    "question": "Are JPM's gross margins historically consistent (not fluctuating more than roughly 2% each year)? If gross margins are not a relevant metric for a company like this, then please state that and explain why.",
+    "gold_answer": "Since JPM is a financial institution, gross margin is not a relevant metric.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -3.839606285095215
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -5.583700180053711
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -5.896076202392578
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -6.2519659996032715
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -6.977814674377441
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -7.26439905166626
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -7.327220916748047
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -7.974490165710449
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -8.16608715057373
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": -8.476996421813965
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00394",
+    "company": "JPMorgan",
+    "ticker": "JPM",
+    "question": "In 2022 Q2, which of JPM's business segments had the highest net income?",
+    "gold_answer": "Corporate & Investment Bank. Its net income was $3725 million.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -0.32156944274902344
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": -0.6130435466766357
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -0.6798201203346252
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -1.0272676944732666
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -1.2446216344833374
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -1.3066613674163818
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -1.4590935707092285
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": -1.5840550661087036
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -1.7458276748657227
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": -2.048687219619751
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_02049",
+    "company": "JPMorgan",
+    "ticker": "JPM",
+    "question": "Looking at VaR, did the risk that JPM faced in the second fiscal quarter of 2023 decrease compared to the same period in the prior year?",
+    "gold_answer": "Yes. It decreased.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": 4.0264434814453125
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": 3.534956455230713
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": 3.2648043632507324
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": 1.4151830673217773
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": 1.094152569770813
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": 0.6439522504806519
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-13",
+        "score": 0.6079246401786804
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": 0.4329203963279724
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-01",
+        "score": -0.2776073217391968
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -0.9937803149223328
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_04700",
+    "company": "Microsoft",
+    "ticker": "MSFT",
+    "question": "What is the FY2016 COGS for Microsoft? Please state answer in USD millions. Provide a response to the question by primarily using the statement of income.",
+    "gold_answer": "$32780.00",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-07-30",
+        "score": -6.657686233520508
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2024-07-30",
+        "score": -7.000805854797363
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-29",
+        "score": -7.98082160949707
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-01-28",
+        "score": -8.241069793701172
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-29",
+        "score": -8.357622146606445
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-07-30",
+        "score": -8.520748138427734
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-07-30",
+        "score": -9.208751678466797
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-30",
+        "score": -9.575206756591797
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-30",
+        "score": -9.74748420715332
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-30",
+        "score": -9.863758087158203
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00552",
+    "company": "Microsoft",
+    "ticker": "MSFT",
+    "question": "Has Microsoft increased its debt on balance sheet between FY2023 and the FY2022 period?",
+    "gold_answer": "No. Microsoft decreased its debt by $2.5bn in FY 2023 vs FY 2022.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2024-07-30",
+        "score": -3.5874500274658203
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-07-30",
+        "score": -3.643710136413574
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2024-07-30",
+        "score": -4.252851486206055
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-10-29",
+        "score": -4.862977504730225
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-01-28",
+        "score": -5.458217620849609
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-04-29",
+        "score": -5.468226432800293
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-04-30",
+        "score": -5.733804702758789
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2024-07-30",
+        "score": -6.048650741577148
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-07-30",
+        "score": -6.048650741577148
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-07-30",
+        "score": -6.137599468231201
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00302",
+    "company": "Pfizer",
+    "ticker": "PFE",
+    "question": "Did Pfizer grow its PPNE between FY20 and FY21?",
+    "gold_answer": "Yes, change in PPNE was positive year over year",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -3.5177719593048096
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -3.74745512008667
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "score": -3.8374128341674805
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -3.8374128341674805
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -4.066307067871094
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -4.151418685913086
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -4.19069242477417
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-05",
+        "score": -4.238927364349365
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -4.419191360473633
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -4.501045227050781
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00702",
+    "company": "Pfizer",
+    "ticker": "PFE",
+    "question": "Were there any potential events that are not in Pfizer's standard business operations that substantially increased net income in 2019?",
+    "gold_answer": "Yes, the gain on completion of Consumer Healthcare JV Transaction",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": 1.1945675611495972
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": 0.8044986724853516
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -0.4695417284965515
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -0.47829699516296387
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "score": -0.6070952415466309
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -0.9713340997695923
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -1.0799696445465088
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-05",
+        "score": -1.9765942096710205
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -2.5448408126831055
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -3.388939380645752
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_02416",
+    "company": "Pfizer",
+    "ticker": "PFE",
+    "question": "What are three main companies acquired by Pfizer mentioned in this 10K report?",
+    "gold_answer": "Trillium, Array, and Therachon",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": 2.812244415283203
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "score": 2.7666752338409424
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": 1.9360637664794922
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "score": 1.9197965860366821
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": 1.8646349906921387
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": 1.8463863134384155
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": 1.8272771835327148
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "score": 1.7692660093307495
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-05",
+        "score": 1.2504985332489014
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": 1.2070035934448242
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00283",
+    "company": "Pfizer",
+    "ticker": "PFE",
+    "question": "How much does Pfizer expect to pay to spin off Upjohn in the future in USD million?",
+    "gold_answer": "77.78",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": 2.420121192932129
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -0.26454341411590576
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -2.8135287761688232
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -3.7838239669799805
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -3.925732135772705
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -4.453449249267578
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-05-05",
+        "score": -4.905544281005859
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -5.145126819610596
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-11-04",
+        "score": -5.214377403259277
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -6.296161651611328
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_00724",
+    "company": "Pfizer",
+    "ticker": "PFE",
+    "question": "For Pfizer, which geographic region had the biggest drop in Q22023 year over year revenues (on a percentage basis)?",
+    "gold_answer": "Developed Rest of the World",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -1.2752516269683838
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -2.4691433906555176
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -2.9230360984802246
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -3.2105212211608887
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -4.282815933227539
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -4.646242141723633
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -5.813652038574219
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -6.609597206115723
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -6.844102382659912
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -6.859649658203125
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_02419",
+    "company": "Pfizer",
+    "ticker": "PFE",
+    "question": "As of Q2'2023, is Pfizer spinning off any large business segments?",
+    "gold_answer": "Yes, it's spinning off Upjohn.",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": 0.7724655270576477
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": 0.5409946441650391
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": 0.4300747513771057
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -0.17114093899726868
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -0.2591361105442047
+      },
+      {
+        "section": "md_and_a",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-05",
+        "score": -0.7766973972320557
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -2.1536450386047363
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -2.405621290206909
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-02-26",
+        "score": -2.4557909965515137
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-02-27",
+        "score": -2.8675355911254883
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_06247",
+    "company": "Walmart",
+    "ticker": "WMT",
+    "question": "What is FY2018 days payable outstanding (DPO) for Walmart? DPO is defined as: 365 * (average accounts payable between FY2017 and FY2018) / (FY2018 COGS + change in inventory between FY2017 and FY2018). Round your answer to two decimal places. Please base your judgments on the information provided primarily in the statement of financial position and the P&L statement.",
+    "gold_answer": "42.69",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-12-03",
+        "score": -3.1849050521850586
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-29",
+        "score": -3.5580055713653564
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-03-14",
+        "score": -3.5956649780273438
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-03-13",
+        "score": -4.043865203857422
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-06-06",
+        "score": -4.196789741516113
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-03-13",
+        "score": -4.62339973449707
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-03-14",
+        "score": -4.6355767250061035
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-29",
+        "score": -5.312620639801025
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-29",
+        "score": -5.31846284866333
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-06-06",
+        "score": -5.722724437713623
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_04784",
+    "company": "Walmart",
+    "ticker": "WMT",
+    "question": "Based on the information provided primarily in the statement of income, what is the FY2018 - FY2019 change in unadjusted operating income % margin for Walmart? Answer in units of percents and round to one decimal place.",
+    "gold_answer": "0.2%",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-03-13",
+        "score": -5.109593391418457
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-29",
+        "score": -5.6267499923706055
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-06-06",
+        "score": -5.785014629364014
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-03-13",
+        "score": -5.919780254364014
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-29",
+        "score": -5.962038993835449
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-06-06",
+        "score": -5.967498779296875
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-03-14",
+        "score": -6.101438522338867
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-06-06",
+        "score": -6.141627311706543
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-29",
+        "score": -6.413033485412598
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-12-03",
+        "score": -6.565622329711914
+      }
+    ],
+    "retrieval_hit": false,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "financebench_id_06741",
+    "company": "Walmart",
+    "ticker": "WMT",
+    "question": "What is the FY2018 - FY2020 3 year average unadjusted EBITDA % margin for Walmart? Define unadjusted EBITDA as unadjusted operating income + depreciation and amortization from the cash flow statement. Answer in units of percents and round to one decimal place. Calculate what was asked by utilizing the line items clearly shown in the P&L statement and the cash flow statement.",
+    "gold_answer": "6.2%",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-29",
+        "score": -2.094231605529785
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-12-03",
+        "score": -4.192248344421387
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2025-03-14",
+        "score": -4.414017677307129
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-12-03",
+        "score": -4.417147159576416
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-03-13",
+        "score": -4.619776248931885
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-08-29",
+        "score": -4.639586925506592
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-29",
+        "score": -4.903567314147949
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2025-06-06",
+        "score": -4.912224769592285
+      },
+      {
+        "section": "controls_and_procedures",
+        "filing_type": "10-K",
+        "filing_date": "2026-03-13",
+        "score": -5.263484954833984
+      },
+      {
+        "section": "risk_factors",
+        "filing_type": "10-Q",
+        "filing_date": "2026-05-29",
+        "score": -5.28741455078125
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  }
+]
