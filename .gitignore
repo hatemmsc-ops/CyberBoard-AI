@@ -1,4 +1,12 @@
-data/
+data/*
+!data/financebench/
+data/financebench/*
+!data/financebench/eval_results.json
+!data/financebench/ablation_results.json
+!data/financebench/matched_questions.json
+!data/sec_filings/
+data/sec_filings/*
+!data/sec_filings/manifest.csv
 __pycache__/
 *.pyc
 .env
