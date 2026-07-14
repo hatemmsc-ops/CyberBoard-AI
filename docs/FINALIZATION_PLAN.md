@@ -14,16 +14,16 @@ This plan and any session using it concern ONLY the thesis (CyberBoard-AI). All 
 - Data: 116 SEC filings (20 Fortune 500 companies) parsed to JSON; 18,136 chunks in ChromaDB (data/chromadb, 351 MB, gitignored). Bahrain Bourse: 0 files (open item).
 - Key results (all reproducible from data/financebench/eval_results.json and ablation_results.json):
   - FinanceBench retrieval hit rate 96.8% (30/31), was 54.8% before a BM25 ticker-filtering bug fix (filtering ran after global top-k selection; fixed in src/pipeline/vector_store.py).
-  - Reranking contribution +12.9 points (83.9% to 96.8%). Sparse-only equals hybrid at 96.8% because dense retrieval is inactive without cloud LLM/embedding credentials.
+  - Reranking contribution +12.9 points (83.9% to 96.8%). These baseline numbers were captured before dense retrieval was activated; re-running with dense active is a Week 8 task.
 - UI: Streamlit (src/ui/app.py), navy/gold theme, three modes, retrieval reasoning trace visualization working. Launch: streamlit run src/ui/app.py (or .claude/launch.json cyberboard-ui).
 
 ### Mid Review Report status
 
-The report (outside this repo, in the Thesis folder) is complete to Bahrain Polytechnic Thesis Handbook specification and pending only final user steps: a live dashboard screenshot, the student's signature, and submission before the 19 July 2026 deadline. Content covers ~3,760 words across 9 sections, 30 IEEE-numbered references, an updated Gantt chart, a 5-item risk register, and a reflection section, all grounded in the real evaluation numbers above.
+The report (outside this repo, in the Thesis folder) is complete to Bahrain Polytechnic Thesis Handbook specification, including a real dashboard screenshot, and pending only the student's signature and submission before the 19 July 2026 deadline. Content covers ~3,200 words across 9 sections, 30 IEEE-numbered references, an updated Gantt chart, a 5-item risk register, and a reflection section, all grounded in the real evaluation numbers above.
 
-### Compute access blocker
+### Compute access — resolved
 
-The institution will not provide an Azure OpenAI subscription. The current plan is to apply for the AWS Cloud Credit for Research programme to fund an OpenAI-compatible endpoint or Amazon Bedrock, with a personal subscription as fallback if that is delayed. This blocks dense embeddings, the full agent reasoning loop, LLM-judge faithfulness scoring, and the two stated hypothesis tests (H1, H2), which in turn blocks full completion of Objectives O3, O4, and O5.
+The institution would not provide an Azure OpenAI subscription. The project migrated to the Gemini API (billed tier) as of 14 July 2026: all 18,136 chunks are embedded and dense retrieval, the full agent reasoning loop, and LLM-judge faithfulness scoring are unblocked. The two stated hypothesis tests (H1, H2) and full completion of Objectives O3, O4, and O5 are Week 8-9 work, no longer gated on compute access.
 
 ## Hard deadlines
 
@@ -36,17 +36,17 @@ The institution will not provide an Azure OpenAI subscription. The current plan 
 
 ## Phase 0. User prerequisites (ask, do not start work that depends on them)
 
-1. Compute access: cloud credit application or personal subscription fallback, then credentials into `.env` (see `.env.example`).
+1. ~~Compute access~~ — done (Gemini API, billed tier, 14 July 2026).
 2. Bahrain Bourse annual report PDFs (5 to 10 companies, English) from bahrainbourse.com. The site blocks automated access, so this is a manual step.
 3. Mid Review Report: dashboard screenshot, signature, final read-through, submission.
 
-## Phase 1. Compute activation (first coding work once credentials exist)
+## Phase 1. Compute activation — DONE (14 July 2026)
 
-1. Verify: `python3 -c "import config; print(config.azure_available())"` prints True (or the equivalent check if the provider changed).
-2. Embed all 18,136 chunks with `src/pipeline/embedder.py` (batched, has backoff). Store into ChromaDB via `HybridStore.add_chunks`. Expect real API cost; confirm with the user before running.
-3. Verify: a dense query returns nonzero dense candidates in the search trace.
-4. Smoke test the agent end to end; confirm the advisory disclaimer appears.
-5. Re-run `python -m src.evaluation.financebench_eval` then `python -m src.evaluation.ablation_study`. Dense-only and true hybrid configs should now produce distinct numbers. H2 test: is reranking at least +10% precision over dense alone.
+1. Verify: `python3 -c "import config; print(config.gemini_available())"` prints True.
+2. Embed all 18,136 chunks with `src/pipeline/reembed.py` (resumable, checkpoints to disk, streams upserts in batches). Note: ChromaDB locks a collection's embedding dimension at creation, so switching providers/dimensions requires deleting and recreating the collection — the script handles this via `dump_docs_and_metas` / `recreate_collection`.
+3. Verify: a dense query returns nonzero dense candidates in the search trace. Confirmed: `dense_candidates: 10` on a live query.
+4. Smoke test the agent end to end; confirm the advisory disclaimer appears. Confirmed with a real JPMorgan cybersecurity-controls query, grounded and cited.
+5. Re-run `python -m src.evaluation.financebench_eval` then `python -m src.evaluation.ablation_study` with dense active — still pending, Week 8 task. Dense-only and true hybrid configs should now produce distinct numbers. H2 test: is reranking at least +10% precision over dense alone.
 6. Commit and push.
 
 ## Phase 2. Bahrain Bourse corpus and GCC evaluation set

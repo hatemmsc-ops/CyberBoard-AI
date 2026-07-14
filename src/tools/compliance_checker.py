@@ -30,8 +30,13 @@ def compliance_checker(ticker: str, topic: str = "") -> str:
         query += f" {topic}"
 
     query_emb = None
-    if config.azure_available():
-        query_emb = embed_batch([query], get_client())[0]
+    if config.gemini_available():
+        try:
+            query_emb = embed_batch([query], get_client())[0]
+        except Exception:
+            # Fall back to sparse-only retrieval if the embedding call fails
+            # (e.g. transient provider outage); still return real, grounded results.
+            pass
 
     results = store.search(query, query_embedding=query_emb, k=6, ticker=ticker.upper())
 

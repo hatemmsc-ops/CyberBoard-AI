@@ -1,6 +1,7 @@
 """CyberBoard-AI: ReAct agent for corporate governance advisory."""
 
 import asyncio
+import time
 from agents import Agent, Runner, ModelSettings
 
 import sys
@@ -27,6 +28,10 @@ Guidelines:
 - Flag any data gaps or limitations in available filings
 - Compare across time periods when relevant
 - Be precise with financial figures and avoid speculation
+- If a tool call fails or returns no grounded results, say so plainly and stop there.
+  Never substitute your own general/background knowledge about a company for retrieved
+  filing content, even to be helpful — an ungrounded answer is worse than no answer, since
+  the board member cannot tell it apart from a cited one.
 - End every response with: "This output is advisory only and should not be construed as financial advice."
 
 Available companies: AAPL, MSFT, AMZN, GOOGL, META, TSLA, NVDA, JPM, JNJ, V,
@@ -42,7 +47,7 @@ Use multiple tools when a question spans different areas. Think step by step."""
 
 def create_agent() -> Agent:
     """Create the CyberBoard-AI advisory agent."""
-    model_name = f"azure/{config.AZURE_OPENAI_DEPLOYMENT}" if config.azure_available() else "gpt-4o"
+    model_name = f"litellm/gemini/{config.GEMINI_CHAT_MODEL}" if config.gemini_available() else "gpt-4o"
 
     return Agent(
         name="CyberBoard-AI",
@@ -53,11 +58,31 @@ def create_agent() -> Agent:
     )
 
 
-async def ask(question: str) -> str:
-    """Run a single query through the agent."""
+class AgentUnavailableError(Exception):
+    """Raised when the model API fails after retries. Safe to show to end users."""
+
+
+def _is_transient(error: Exception) -> bool:
+    msg = str(error).lower()
+    return any(s in msg for s in ("503", "429", "unavailable", "rate", "resource_exhausted", "overloaded"))
+
+
+async def ask(question: str, max_retries: int = 3) -> str:
+    """Run a single query through the agent, retrying on transient model-provider errors."""
     agent = create_agent()
-    result = await Runner.run(agent, question)
-    return result.final_output
+    for attempt in range(max_retries):
+        try:
+            result = await Runner.run(agent, question)
+            return result.final_output
+        except Exception as e:
+            if _is_transient(e) and attempt < max_retries - 1:
+                wait = 2 ** attempt
+                print(f"  Model temporarily unavailable, retrying in {wait}s...")
+                await asyncio.sleep(wait)
+                continue
+            raise AgentUnavailableError(
+                "The AI model is temporarily unavailable or overloaded. Please try again in a moment."
+            ) from e
 
 
 def ask_sync(question: str) -> str:
@@ -72,4 +97,7 @@ if __name__ == "__main__":
     else:
         question = "What are Apple's main risk factors according to their most recent 10-K filing?"
     print(f"Question: {question}\n")
-    print(ask_sync(question))
+    try:
+        print(ask_sync(question))
+    except AgentUnavailableError as e:
+        print(f"Error: {e}")

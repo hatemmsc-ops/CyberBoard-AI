@@ -41,7 +41,7 @@ An early version had a bug: the BM25 sparse retriever filtered by company ticker
 
 ```bash
 pip install -r requirements.txt
-cp .env.example .env   # fill in Azure OpenAI credentials (optional — the pipeline runs on BM25 alone without them)
+cp .env.example .env   # fill in a Gemini API key (optional — the pipeline runs on BM25 alone without it)
 ```
 
 ## Running the pipeline
@@ -55,7 +55,7 @@ python -m src.evaluation.ablation_study     # ablation study
 streamlit run src/ui/app.py                 # dashboard
 ```
 
-The evaluation and dashboard both work without Azure OpenAI credentials, running on BM25 sparse retrieval only. Dense embeddings, the full ReAct agent, and the "Ask Agent" UI mode require Azure OpenAI (or an OpenAI-compatible endpoint) configured in `.env`.
+The evaluation and dashboard both work without a Gemini API key, running on BM25 sparse retrieval only. Dense embeddings, the full ReAct agent, and the "Ask Agent" UI mode require a Gemini API key (`GEMINI_API_KEY`) configured in `.env`.
 
 ## Data
 

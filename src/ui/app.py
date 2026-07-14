@@ -162,9 +162,14 @@ def load_store():
 def retrieve(query: str, ticker: str, k: int = 5, with_trace: bool = False):
     store = load_store()
     query_emb = None
-    if config.azure_available():
+    if config.gemini_available():
         from src.pipeline.embedder import embed_batch, get_client
-        query_emb = embed_batch([query], get_client())[0]
+        try:
+            query_emb = embed_batch([query], get_client())[0]
+        except Exception:
+            # Fall back to sparse-only search if the embedding call fails
+            # (e.g. transient provider outage); no need to hard-fail the query.
+            pass
     trace = [] if with_trace else None
     results = store.search(query, query_embedding=query_emb, k=k, ticker=ticker, trace=trace)
     if with_trace:
@@ -187,7 +192,7 @@ def render_trace(trace: list):
                 cols = st.columns(3)
                 cols[0].metric("Sparse candidates (BM25)", step["sparse_candidates"])
                 cols[1].metric("Dense candidates", step["dense_candidates"],
-                               help="0 when Azure OpenAI embeddings are not configured")
+                               help="0 when Gemini embeddings are not configured")
                 cols[2].metric("Company filter", step["ticker_filter"])
                 if step["top_sparse"]:
                     st.caption("Top BM25 matches: " + ", ".join(
@@ -217,6 +222,17 @@ def run_agent(question: str):
         loop.close()
 
 
+def run_agent_safe(question: str):
+    """Run the agent and return (answer, error_message). Never raises."""
+    from src.agent.react_agent import AgentUnavailableError
+    try:
+        return run_agent(question), None
+    except AgentUnavailableError as e:
+        return None, str(e)
+    except Exception:
+        return None, "Something went wrong while contacting the AI model. Please try again."
+
+
 # Sidebar
 st.sidebar.markdown(
     '<h2 style="margin-bottom:0;">🏛️ Cyber<span style="color:#C9A84C;">Board</span>-AI</h2>'
@@ -228,32 +244,36 @@ mode = st.sidebar.radio("Mode", ["Ask Agent", "Search Filings", "Evaluation Resu
 selected_ticker = st.sidebar.selectbox("Company", ["All"] + TICKERS)
 
 st.sidebar.markdown("---")
-azure_ok = config.azure_available()
+gemini_ok = config.gemini_available()
 st.sidebar.markdown(
     f'<span class="cb-chip">{load_store().collection.count():,} chunks</span>'
     f'<span class="cb-chip">{len(TICKERS)} companies</span><br><br>'
-    f'<span class="cb-pill {"high" if azure_ok else "low"}" style="float:none;">'
-    f'Azure {"connected" if azure_ok else "not configured"}</span>',
+    f'<span class="cb-pill {"high" if gemini_ok else "low"}" style="float:none;">'
+    f'Gemini {"connected" if gemini_ok else "not configured"}</span>',
     unsafe_allow_html=True)
 
 # Main content
 if mode == "Ask Agent":
     hero("Ask the", "Advisory Board", "Board level answers grounded in SEC filings")
 
-    if not config.azure_available():
-        st.warning("Azure OpenAI not configured. Add credentials to .env to enable the agent.")
+    if not config.gemini_available():
+        st.warning("Gemini API not configured. Add GEMINI_API_KEY to .env to enable the agent.")
 
     question = st.text_area("Your question:", placeholder="What are Apple's main risk factors?", height=80)
 
-    if st.button("Ask", type="primary", disabled=not config.azure_available()):
+    if st.button("Ask", type="primary", disabled=not config.gemini_available()):
         with st.spinner("Agent is reasoning..."):
-            answer = run_agent(question)
-        st.markdown("### Response")
-        st.markdown(answer)
+            answer, error = run_agent_safe(question)
+
+        if error:
+            st.error(error)
+        else:
+            st.markdown("### Response")
+            st.markdown(answer)
 
         # Show sources
         ticker = selected_ticker if selected_ticker != "All" else None
-        if ticker:
+        if not error and ticker:
             with st.expander("View retrieved sources"):
                 results = retrieve(question, ticker)
                 for i, r in enumerate(results):
