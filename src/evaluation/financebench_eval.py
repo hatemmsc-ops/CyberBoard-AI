@@ -37,7 +37,7 @@ def evaluate_retrieval(question: str, ticker: str, gold_evidence: list, k: int =
         store.rebuild_bm25_from_collection()
 
     query_emb = None
-    if config.azure_available():
+    if config.gemini_available():
         query_emb = embed_batch([question], get_client())[0]
 
     results = store.search(question, query_embedding=query_emb, k=k, ticker=ticker)
@@ -158,9 +158,9 @@ def run_retrieval_eval(matched_path: Path = None) -> list[EvalResult]:
 
 
 def run_full_eval(matched_path: Path = None) -> list[EvalResult]:
-    """Full evaluation with agent (requires Azure OpenAI)."""
-    if not config.azure_available():
-        print("Azure OpenAI not configured. Running retrieval-only evaluation.")
+    """Full evaluation with agent (requires Gemini API access)."""
+    if not config.gemini_available():
+        print("Gemini API not configured. Running retrieval-only evaluation.")
         return run_retrieval_eval(matched_path)
 
     if matched_path is None:

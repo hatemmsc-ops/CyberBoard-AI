@@ -64,12 +64,12 @@ def run_ablation(configs: list[AblationConfig] = None, matched_path: Path = None
         print(f"Config: {cfg.name}")
         print(f"  dense={cfg.use_dense}, sparse={cfg.use_sparse}, rerank={cfg.use_rerank}, alpha={cfg.alpha}")
 
-        # Skip dense-only configs if Azure not available
-        if cfg.use_dense and cfg.alpha > 0 and not config.azure_available():
+        # Skip dense-only configs if Gemini not available
+        if cfg.use_dense and cfg.alpha > 0 and not config.gemini_available():
             if not cfg.use_sparse:
-                print("  SKIPPED (requires Azure for dense retrieval)")
+                print("  SKIPPED (requires Gemini API key for dense retrieval)")
                 continue
-            print("  NOTE: Running sparse-only (no Azure key for dense)")
+            print("  NOTE: Running sparse-only (no Gemini key for dense)")
 
         hits = 0
         total_time = 0
@@ -81,7 +81,7 @@ def run_ablation(configs: list[AblationConfig] = None, matched_path: Path = None
             start = time.time()
 
             query_emb = None
-            if cfg.use_dense and config.azure_available():
+            if cfg.use_dense and config.gemini_available():
                 from src.pipeline.embedder import embed_batch, get_client
                 query_emb = embed_batch([q["question"]], get_client())[0]
 

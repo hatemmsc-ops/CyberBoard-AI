@@ -26,8 +26,13 @@ def financial_summarizer(query: str, ticker: str) -> str:
         store.rebuild_bm25_from_collection()
 
     query_emb = None
-    if config.azure_available():
-        query_emb = embed_batch([query], get_client())[0]
+    if config.gemini_available():
+        try:
+            query_emb = embed_batch([query], get_client())[0]
+        except Exception:
+            # Fall back to sparse-only retrieval if the embedding call fails
+            # (e.g. transient provider outage); still return real, grounded results.
+            pass
 
     if not store.bm25:
         store.rebuild_bm25_from_collection()

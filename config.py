@@ -9,11 +9,9 @@ DATA_DIR = PROJECT_ROOT / "data"
 SEC_FILINGS_DIR = DATA_DIR / "sec_filings"
 CHROMA_DIR = DATA_DIR / "chromadb"
 
-AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "")
-AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY", "")
-AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4o")
-AZURE_OPENAI_EMBEDDING_DEPLOYMENT = os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-3-small")
-AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_CHAT_MODEL = os.getenv("GEMINI_CHAT_MODEL", "gemini-flash-latest")
+GEMINI_EMBEDDING_MODEL = os.getenv("GEMINI_EMBEDDING_MODEL", "gemini-embedding-001")
 SEC_EDGAR_USER_AGENT = os.getenv("SEC_EDGAR_USER_AGENT", "Hatem Isa applehtm777@gmail.com")
 
 CHUNK_SIZE = 512
@@ -46,5 +44,5 @@ COMPANIES = {
     "GS": "0000886982",
 }
 
-def azure_available():
-    return bool(AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_API_KEY)
+def gemini_available():
+    return bool(GEMINI_API_KEY)
