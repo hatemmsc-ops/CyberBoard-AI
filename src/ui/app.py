@@ -159,6 +159,16 @@ def load_store():
     return store
 
 
+@st.cache_resource
+def load_ajyad_store():
+    """Separate demo collection (Ajyad Capital annual reports) — not part of the thesis's formal evaluation corpus."""
+    from src.pipeline.vector_store import HybridStore
+    store = HybridStore(collection_name=config.AJYAD_DEMO_COLLECTION_NAME)
+    if not store.bm25:
+        store.rebuild_bm25_from_collection()
+    return store
+
+
 def retrieve(query: str, ticker: str, k: int = 5, with_trace: bool = False):
     store = load_store()
     query_emb = None
@@ -240,7 +250,7 @@ st.sidebar.markdown(
     'AI Advisory Board Agent</p>',
     unsafe_allow_html=True)
 
-mode = st.sidebar.radio("Mode", ["Ask Agent", "Search Filings", "Evaluation Results"])
+mode = st.sidebar.radio("Mode", ["Ask Agent", "Search Filings", "Ajyad Capital (Demo)", "Evaluation Results"])
 selected_ticker = st.sidebar.selectbox("Company", ["All"] + TICKERS)
 
 st.sidebar.markdown("---")
@@ -303,6 +313,40 @@ elif mode == "Search Filings":
         if show_trace and trace:
             with st.expander("Retrieval reasoning trace", expanded=True):
                 render_trace(trace)
+
+elif mode == "Ajyad Capital (Demo)":
+    hero("Ajyad Capital", "Demo Showcase", "Live retrieval over Ajyad Capital annual reports")
+
+    st.info(
+        "This is a showcase corpus (Ajyad Capital annual reports, 2021 to 2025), included to demonstrate "
+        "the pipeline on a real GCC company the author works with. It is a separate ChromaDB collection "
+        "and is not part of the thesis's formal evaluation methodology, which is scoped to SEC EDGAR "
+        "filings and the Bahrain Bourse GCC evaluation set."
+    )
+
+    ajyad_store = load_ajyad_store()
+    st.caption(f"{ajyad_store.collection.count():,} chunks indexed")
+
+    col1, col2 = st.columns([3, 1])
+    with col1:
+        ajyad_query = st.text_input("Search query:", placeholder="capital adequacy ratio",
+                                     key="ajyad_query")
+    with col2:
+        ajyad_k = st.slider("Results", 3, 20, 5, key="ajyad_k")
+
+    if ajyad_query:
+        query_emb = None
+        if config.gemini_available():
+            from src.pipeline.embedder import embed_batch, get_client
+            try:
+                query_emb = embed_batch([ajyad_query], get_client())[0]
+            except Exception:
+                pass
+        ajyad_results = ajyad_store.search(ajyad_query, query_embedding=query_emb, k=ajyad_k)
+
+        st.markdown(f"**{len(ajyad_results)} results**")
+        for r in ajyad_results:
+            result_card(r["metadata"], confidence_from_result(r), r["text"])
 
 elif mode == "Evaluation Results":
     hero("Evaluation", "Results", "FinanceBench retrieval accuracy and ablation study")

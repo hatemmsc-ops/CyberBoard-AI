@@ -7,6 +7,9 @@ data/financebench/*
 !data/sec_filings/
 data/sec_filings/*
 !data/sec_filings/manifest.csv
+!data/gcc_eval/
+data/gcc_eval/*
+!data/gcc_eval/questions.json
 __pycache__/
 *.pyc
 .env
