@@ -17,13 +17,11 @@ def risk_identifier(ticker: str, risk_category: str = "") -> str:
         ticker: Stock ticker symbol (e.g. AAPL, MSFT).
         risk_category: Optional filter like 'regulatory', 'market', 'operational', 'cybersecurity', 'supply chain'.
     """
-    from src.pipeline.vector_store import HybridStore, confidence_from_result
+    from src.pipeline.vector_store import get_cached_store, confidence_from_result
     from src.pipeline.embedder import embed_batch, get_client
     import config
 
-    store = HybridStore(collection_name=config.collection_for_ticker(ticker))
-    if not store.bm25:
-        store.rebuild_bm25_from_collection()
+    store = get_cached_store(config.collection_for_ticker(ticker))
 
     query = f"{ticker} risk factors"
     if risk_category:
