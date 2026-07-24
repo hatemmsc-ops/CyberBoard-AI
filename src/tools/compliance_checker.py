@@ -21,7 +21,7 @@ def compliance_checker(ticker: str, topic: str = "") -> str:
     from src.pipeline.embedder import embed_batch, get_client
     import config
 
-    store = HybridStore()
+    store = HybridStore(collection_name=config.collection_for_ticker(ticker))
     if not store.bm25:
         store.rebuild_bm25_from_collection()
 
