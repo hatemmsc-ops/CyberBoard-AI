@@ -9,12 +9,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 @function_tool
 def compliance_checker(ticker: str, topic: str = "") -> str:
-    """Retrieve governance, compliance, and internal controls information from SEC filings.
-    Use this tool when the user asks about corporate governance, regulatory compliance,
-    internal controls, audit findings, board oversight, or ESG disclosures.
+    """Retrieve governance, compliance, and internal controls information from a company's
+    filings (US SEC reports or Bahrain Bourse annual reports). Use this tool when the user
+    asks about corporate governance, regulatory compliance, internal controls, audit
+    findings, board oversight, or ESG disclosures.
 
     Args:
-        ticker: Stock ticker symbol (e.g. AAPL, MSFT).
+        ticker: Stock ticker symbol (e.g. AAPL, MSFT for US; NBB, BBK, ALBH for Bahrain Bourse).
         topic: Optional focus area like 'internal controls', 'audit', 'board governance', 'ESG', 'cybersecurity governance'.
     """
     from src.pipeline.vector_store import get_cached_store, confidence_from_result

@@ -9,13 +9,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 @function_tool
 def financial_summarizer(query: str, ticker: str) -> str:
-    """Retrieve and summarize financial information from SEC filings for a given company.
-    Use this tool when the user asks about revenue, earnings, financial performance,
-    cash flow, balance sheet items, or any quantitative financial data.
+    """Retrieve and summarize financial information from a company's filings (US SEC
+    reports or Bahrain Bourse annual reports) for a given company. Use this tool when
+    the user asks about revenue, earnings, financial performance, cash flow, balance
+    sheet items, or any quantitative financial data.
 
     Args:
         query: The financial question to answer.
-        ticker: Stock ticker symbol (e.g. AAPL, MSFT).
+        ticker: Stock ticker symbol (e.g. AAPL, MSFT for US; NBB, BBK, ALBH for Bahrain Bourse).
     """
     from src.pipeline.vector_store import get_cached_store, confidence_from_result
     from src.pipeline.embedder import embed_batch, get_client
