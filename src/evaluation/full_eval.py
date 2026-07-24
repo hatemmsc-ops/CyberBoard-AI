@@ -43,13 +43,31 @@ def _load_questions(path: Path) -> list[dict]:
     return data["questions"] if isinstance(data, dict) else data
 
 
-async def _run_agent(agent, ticker: str, question: str) -> tuple[str, str, float]:
-    """Return (final_answer, tool_context, latency)."""
+def _is_transient(err: Exception) -> bool:
+    m = str(err).lower()
+    return any(s in m for s in ("503", "429", "unavailable", "rate", "resource_exhausted",
+                                "overloaded", "connection reset", "read error", "high demand"))
+
+
+async def _run_agent(agent, ticker: str, question: str, max_retries: int = 4) -> tuple[str, str, float]:
+    """Return (final_answer, tool_context, latency).
+
+    Retries transient provider errors (503/429/connection reset) with exponential
+    backoff so a load spike does not silently drop a question from the eval.
+    """
     from agents import Runner
     from agents.items import ToolCallOutputItem
 
     start = time.time()
-    result = await Runner.run(agent, f"Company: {ticker}. Question: {question}")
+    for attempt in range(max_retries):
+        try:
+            result = await Runner.run(agent, f"Company: {ticker}. Question: {question}")
+            break
+        except Exception as e:
+            if _is_transient(e) and attempt < max_retries - 1:
+                await asyncio.sleep(2 ** attempt)
+                continue
+            raise
     latency = time.time() - start
     ctx = "\n\n".join(
         str(it.output) for it in result.new_items if isinstance(it, ToolCallOutputItem)
@@ -93,6 +111,7 @@ def run_full_eval(question_path: Path = None, set_name: str = "gcc") -> list[Jud
         tag = "OK " if r.correct else "XX "
         f = "F" if r.faithful else "h"
         print(f"  [{i+1:2}/{len(questions)}] {ticker:5} {tag}{f} ({r.latency_seconds:4.1f}s) {q['question'][:52]}")
+        time.sleep(1.0)  # light pacing to stay under free-tier request-rate limits
 
     _summarize(results)
     return results
