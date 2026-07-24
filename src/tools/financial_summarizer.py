@@ -33,9 +33,6 @@ def financial_summarizer(query: str, ticker: str) -> str:
             # (e.g. transient provider outage); still return real, grounded results.
             pass
 
-    if not store.bm25:
-        store.rebuild_bm25_from_collection()
-
     results = store.search(query, query_embedding=query_emb, k=5, ticker=ticker.upper())
 
     if not results:

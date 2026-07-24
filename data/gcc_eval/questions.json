@@ -440,9 +440,9 @@
       "doc_period": 2025,
       "question": "What was KFH Group's net profit attributable to shareholders for 2025?",
       "question_type": "numerical",
-      "answer": "US$ 730,585 thousand (US$ 730.6 million)",
-      "evidence_text": "Key Financial Highlights and detail table 'Kuwait Finance House B.S.C. (c) (formerly Ahli United Bank B.S.C. (c))', Dec 2025 column: 'Net profit 730,585'.",
-      "evidence_page": 6,
+      "answer": "US$ 730,585 thousand (US$ 730.6 million) attributable to the owner of the Bank; total net profit for the year including non-controlling interests was US$ 738,061 thousand",
+      "evidence_text": "Consolidated income statement (p71, p74, 2025 column): 'Net profit attributable to the owner of the Bank 730,585 718,150'; total 'NET PROFIT FOR THE YEAR 738,061 730,865', the difference being non-controlling interests. Also shown in Key Financial Highlights (p6).",
+      "evidence_page": 71,
       "verified": true,
       "verification_method": "Confirmed present in extractable source-PDF text (pdfplumber) with year-column header visually verified"
     },
