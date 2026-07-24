@@ -44,6 +44,21 @@ BAHRAIN_BOURSE_COMPANIES = {
     "KFH": ("KFH", "2025"),
 }
 
+# Set of Bahrain Bourse trading tickers, used to route retrieval to the right
+# collection at query time.
+BAHRAIN_BOURSE_TICKERS = {t for t, _ in BAHRAIN_BOURSE_COMPANIES.values()}
+
+
+def collection_for_ticker(ticker: str) -> str:
+    """Return the ChromaDB collection that holds filings for a given ticker.
+
+    GCC (Bahrain Bourse) tickers live in their own collection; everything else
+    is a US SEC filer in the default sec_filings collection.
+    """
+    if ticker and ticker.upper() in BAHRAIN_BOURSE_TICKERS:
+        return BAHRAIN_BOURSE_COLLECTION_NAME
+    return COLLECTION_NAME
+
 COMPANIES = {
     "AAPL": "0000320193",
     "MSFT": "0000789019",

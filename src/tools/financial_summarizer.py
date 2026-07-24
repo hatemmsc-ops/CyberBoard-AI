@@ -21,7 +21,7 @@ def financial_summarizer(query: str, ticker: str) -> str:
     from src.pipeline.embedder import embed_batch, get_client
     import config
 
-    store = HybridStore()
+    store = HybridStore(collection_name=config.collection_for_ticker(ticker))
     if store.collection.count() == 0:
         store.rebuild_bm25_from_collection()
 
