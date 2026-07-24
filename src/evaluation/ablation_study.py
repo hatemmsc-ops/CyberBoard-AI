@@ -42,18 +42,34 @@ DEFAULT_CONFIGS = [
 ]
 
 
-def run_ablation(configs: list[AblationConfig] = None, matched_path: Path = None) -> list[AblationResult]:
+def _load_questions(path: Path) -> list[dict]:
+    data = json.load(open(path))
+    return data["questions"] if isinstance(data, dict) else data
+
+
+def _evidence_list(q: dict) -> list:
+    """Normalize both schemas: FinanceBench 'evidence' list, or GCC 'evidence_text' string."""
+    if q.get("evidence"):
+        return q["evidence"]
+    if q.get("evidence_text"):
+        return [{"evidence_text": q["evidence_text"]}]
+    return []
+
+
+def run_ablation(configs: list[AblationConfig] = None, matched_path: Path = None,
+                 collection_name: str = None) -> list[AblationResult]:
     """Run ablation study across different retrieval configurations."""
     if configs is None:
         configs = DEFAULT_CONFIGS
     if matched_path is None:
         matched_path = config.DATA_DIR / "financebench" / "matched_questions.json"
+    if collection_name is None:
+        collection_name = config.COLLECTION_NAME
 
-    with open(matched_path) as f:
-        questions = json.load(f)
+    questions = _load_questions(matched_path)
 
     from src.pipeline.vector_store import HybridStore
-    store = HybridStore()
+    store = HybridStore(collection_name=collection_name)
     if not store.bm25:
         store.rebuild_bm25_from_collection()
 
@@ -76,7 +92,7 @@ def run_ablation(configs: list[AblationConfig] = None, matched_path: Path = None
 
         for q in questions:
             ticker = q["ticker"]
-            evidence = q.get("evidence", [])
+            evidence = _evidence_list(q)
 
             start = time.time()
 
@@ -141,14 +157,24 @@ def run_ablation(configs: list[AblationConfig] = None, matched_path: Path = None
     return all_results
 
 
-def save_ablation(results: list[AblationResult], output_path: Path = None):
-    if output_path is None:
-        output_path = config.DATA_DIR / "financebench" / "ablation_results.json"
+def save_ablation(results: list[AblationResult], output_path: Path):
     with open(output_path, "w") as f:
         json.dump([asdict(r) for r in results], f, indent=2)
     print(f"\nSaved to {output_path}")
 
 
 if __name__ == "__main__":
-    results = run_ablation()
-    save_ablation(results)
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--set", choices=["gcc", "financebench"], default="financebench")
+    args = ap.parse_args()
+    if args.set == "gcc":
+        path = config.DATA_DIR / "gcc_eval" / "questions.json"
+        collection = config.BAHRAIN_BOURSE_COLLECTION_NAME
+        out = config.DATA_DIR / "gcc_eval" / "ablation_results.json"
+    else:
+        path = config.DATA_DIR / "financebench" / "matched_questions.json"
+        collection = config.COLLECTION_NAME
+        out = config.DATA_DIR / "financebench" / "ablation_results.json"
+    results = run_ablation(matched_path=path, collection_name=collection)
+    save_ablation(results, out)
