@@ -80,8 +80,12 @@ def run_full_eval(question_path: Path = None, set_name: str = "gcc") -> list[Jud
         raise RuntimeError("Gemini API not configured; the agent and judge both need it.")
 
     if question_path is None:
-        question_path = (config.DATA_DIR / "gcc_eval" / "questions.json" if set_name == "gcc"
-                         else config.DATA_DIR / "financebench" / "matched_questions.json")
+        _paths = {
+            "gcc": config.DATA_DIR / "gcc_eval" / "questions.json",
+            "sec_recent": config.DATA_DIR / "sec_recent" / "questions.json",
+            "financebench": config.DATA_DIR / "financebench" / "matched_questions.json",
+        }
+        question_path = _paths.get(set_name, _paths["financebench"])
 
     from src.agent.react_agent import create_agent
     agent = create_agent()
@@ -143,9 +147,10 @@ def _summarize(results: list[JudgedResult]):
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
-    ap.add_argument("--set", choices=["gcc", "financebench"], default="gcc")
+    ap.add_argument("--set", choices=["gcc", "sec_recent", "financebench"], default="gcc")
     args = ap.parse_args()
     res = run_full_eval(set_name=args.set)
-    out = config.DATA_DIR / ("gcc_eval" if args.set == "gcc" else "financebench") / "full_eval_results.json"
+    _dir = {"gcc": "gcc_eval", "sec_recent": "sec_recent", "financebench": "financebench"}[args.set]
+    out = config.DATA_DIR / _dir / "full_eval_results.json"
     json.dump([asdict(r) for r in res], open(out, "w"), indent=2, ensure_ascii=False)
     print(f"\nSaved to {out}")
