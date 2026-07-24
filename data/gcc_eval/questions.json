@@ -230,11 +230,11 @@
       "doc_period": 2023,
       "question": "What was Batelco Group's net profit attributable to equity holders for 2023?",
       "question_type": "numerical",
-      "answer": "BD 82,036 thousand (BD 82.0 million)",
-      "evidence_text": "Consolidated Statement of Profit or Loss, year ended 31 December 2023 (BD'000, 2023 column): 'Profit for the year 82,036 80,358'.",
+      "answer": "BD 72,049 thousand (BD 72.0 million) attributable to equity holders of the Company; total profit for the year was BD 82,036 thousand, the difference being BD 9,987 thousand of non-controlling interest",
+      "evidence_text": "Consolidated statement of profit or loss (p12, p53, 2023 column): 'Profit for the year attributable to equity holders of the Company 72,049 70,324'; 'Profit for the year 82,036 80,358'; 'Non-controlling interest 9,987 10,034'.",
       "evidence_page": 12,
       "verified": true,
-      "verification_method": "Confirmed present in extractable source-PDF text (pdfplumber) with year-column header visually verified"
+      "verification_method": "Confirmed in extractable source-PDF text; attributable-to-equity-holders figure (72,049) distinguished from total profit for the year (82,036, which includes non-controlling interest)"
     },
     {
       "id": "gcc-beyon-02",
@@ -354,13 +354,13 @@
       "ticker": "GFH",
       "doc_name": "GFH_AnnualReport_2025",
       "doc_period": 2025,
-      "question": "What was GFH's Tier 1 capital adequacy ratio for 2025?",
+      "question": "What was GFH Group's consolidated Tier 1 capital adequacy ratio at 31 December 2025?",
       "question_type": "numerical",
-      "answer": "Capital adequacy ratio (Tier 1) was 21.68%",
-      "evidence_text": "Notes (p103): 'Capital adequacy ratio (T1) 21.68%'.",
-      "evidence_page": 103,
+      "answer": "15.92% on a Group consolidated basis (CET1 15.87%). The Bank's solo Tier 1 ratio was higher at 21.68%.",
+      "evidence_text": "Pillar III narrative (p96): 'At 31 December 2025, Group's CET1 and T1 capital adequacy ratios were at 15.87% and 15.92%, respectively'. Bank-solo table (p103): 'Capital adequacy ratio (T1) 21.68%'.",
+      "evidence_page": 96,
       "verified": true,
-      "verification_method": "Confirmed present in extractable source-PDF text (pdfplumber) with year-column header visually verified"
+      "verification_method": "Confirmed in extractable source-PDF text; Group consolidated T1 (15.92%) distinguished from Bank-solo T1 (21.68%)"
     },
     {
       "id": "gcc-bisb-01",
@@ -398,11 +398,11 @@
       "doc_period": 2025,
       "question": "What was BisB's total income for 2025?",
       "question_type": "numerical",
-      "answer": "Total income of BD 58.1 million for 2025 (2024: BD 40.7 million)",
-      "evidence_text": "5-year financial summary (p20, 2025 column): 'Total income 58.1 40.7 45.3...'.",
-      "evidence_page": 20,
+      "answer": "BD 74,488 thousand (BD 74.5 million) total income per the consolidated income statement for 2025 (2024: BD 44,813 thousand). The five-year financial summary presents Total income of BD 58.1 million on a different (net) basis.",
+      "evidence_text": "Consolidated income statement (p251, 2025 column): 'Total income 74,488 44,813'. Five-year summary (p22): 'Total income 58.1 40.7 45.3'.",
+      "evidence_page": 251,
       "verified": true,
-      "verification_method": "Confirmed present in extractable source-PDF text (pdfplumber) with year-column header visually verified"
+      "verification_method": "Confirmed in extractable source-PDF text; primary income-statement figure (74,488) used, five-year-summary figure (58.1) noted as a different basis"
     },
     {
       "id": "gcc-bisb-04",
