@@ -2,6 +2,12 @@
 
 This document records the evaluation of the CyberBoard-AI agentic RAG system. It is written to be adapted directly into the thesis results chapter. All figures come from runs recorded in the repository.
 
+## 0. Abstract (draft for the thesis introduction)
+
+CyberBoard-AI is an agentic retrieval system designed to answer governance questions at board level from corporate filings while citing the source of each answer. This study evaluates the system across two document collections of differing character: the annual reports of seven companies listed on Bahrain Bourse, and the recent 10-K and 10-Q filings of twenty large United States corporations. Each answer is assessed on two dimensions: accuracy, meaning whether the reported figure matches the source, and faithfulness, meaning whether every claim can be traced to the passages the agent retrieved. On the Bahrain Bourse collection the agent answered every completed question correctly, and the correct passage appeared among the ten highest ranked results in 97 percent of cases. Faithfulness proved more difficult to achieve than accuracy. Approximately one third of the correct answers included a detail that the retrieved text did not support, most often a ratio or a currency conversion the model had derived independently. This divergence is the principal result of the study, because it locates the weakness in how an answer is presented rather than in whether the relevant evidence can be found.
+
+Two further findings emerged from the evaluation itself. Where a filing required to answer a question was absent from the collection, the agent reported the absence rather than fabricating a value, which is the behaviour the design was intended to produce. In three separate cases the agent contradicted a gold answer that had been verified by hand, and the agent proved correct. The manual answer had matched a figure that does appear in the report yet responds to a subtly different question, for example profit before minority interest rather than profit attributable to shareholders. Detecting this class of error required a grounded agent and an independent judge, and it could not be achieved by rereading the statements alone. Confirming that a figure is present is therefore not equivalent to confirming that it answers the question posed.
+
 ## 1. Evaluation design
 
 The system was evaluated on two corpora that are held in separate ChromaDB collections so that results on each stay reproducible and independent.
