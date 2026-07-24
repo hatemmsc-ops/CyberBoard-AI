@@ -17,13 +17,11 @@ def compliance_checker(ticker: str, topic: str = "") -> str:
         ticker: Stock ticker symbol (e.g. AAPL, MSFT).
         topic: Optional focus area like 'internal controls', 'audit', 'board governance', 'ESG', 'cybersecurity governance'.
     """
-    from src.pipeline.vector_store import HybridStore, confidence_from_result
+    from src.pipeline.vector_store import get_cached_store, confidence_from_result
     from src.pipeline.embedder import embed_batch, get_client
     import config
 
-    store = HybridStore(collection_name=config.collection_for_ticker(ticker))
-    if not store.bm25:
-        store.rebuild_bm25_from_collection()
+    store = get_cached_store(config.collection_for_ticker(ticker))
 
     query = f"{ticker} corporate governance compliance controls"
     if topic:

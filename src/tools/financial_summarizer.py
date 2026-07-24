@@ -17,13 +17,11 @@ def financial_summarizer(query: str, ticker: str) -> str:
         query: The financial question to answer.
         ticker: Stock ticker symbol (e.g. AAPL, MSFT).
     """
-    from src.pipeline.vector_store import HybridStore, confidence_from_result
+    from src.pipeline.vector_store import get_cached_store, confidence_from_result
     from src.pipeline.embedder import embed_batch, get_client
     import config
 
-    store = HybridStore(collection_name=config.collection_for_ticker(ticker))
-    if store.collection.count() == 0:
-        store.rebuild_bm25_from_collection()
+    store = get_cached_store(config.collection_for_ticker(ticker))
 
     query_emb = None
     if config.gemini_available():
