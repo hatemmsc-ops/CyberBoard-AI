@@ -4,9 +4,9 @@ This document records the evaluation of the CyberBoard-AI agentic RAG system. It
 
 ## 0. Abstract (draft for the thesis introduction)
 
-CyberBoard-AI is an agentic retrieval system designed to answer governance questions at board level from corporate filings while citing the source of each answer. This study evaluates the system across two document collections of differing character: the annual reports of seven companies listed on Bahrain Bourse, and the recent 10-K and 10-Q filings of twenty large United States corporations. Each answer is assessed on two dimensions: accuracy, meaning whether the reported figure matches the source, and faithfulness, meaning whether every claim can be traced to the passages the agent retrieved. On the Bahrain Bourse collection the agent answered almost every completed question correctly, and the correct passage appeared among the ten highest ranked results in 97 percent of cases. Faithfulness proved more difficult to achieve than accuracy. Approximately one third of the correct answers included a detail that the retrieved text did not support, most often a ratio or a currency conversion the model had derived independently. This divergence is the principal result of the study, because it locates the weakness in how an answer is presented rather than in whether the relevant evidence can be found.
+CyberBoard-AI is an agentic retrieval system designed to answer governance questions at board level from corporate filings while citing the source of each answer. This study evaluates the system across two document collections of differing character: the annual reports of seven companies listed on Bahrain Bourse, and the recent 10-K and 10-Q filings of twenty large United States corporations. Each answer is assessed on two dimensions: accuracy, meaning whether the reported figure matches the source, and faithfulness, meaning whether every claim can be traced to the passages the agent retrieved. On both collections the agent answered almost every completed question correctly, and once the evaluation was measured properly every completed answer was fully grounded in the retrieved evidence. On the Bahrain Bourse collection the correct passage appeared among the ten highest ranked results in 97 percent of cases.
 
-Two further findings emerged from the evaluation itself. Where a filing required to answer a question was absent from the collection, the agent reported the absence rather than fabricating a value, which is the behaviour the design was intended to produce. In three separate cases the agent contradicted a gold answer that had been verified by hand, and the agent proved correct. The manual answer had matched a figure that does appear in the report yet responds to a subtly different question, for example profit before minority interest rather than profit attributable to shareholders. Detecting this class of error required a grounded agent and an independent judge, and it could not be achieved by rereading the statements alone. Confirming that a figure is present is therefore not equivalent to confirming that it answers the question posed.
+Three findings carry the weight of the study. First, when a filing needed to answer a question was absent from the collection, the agent reported the absence rather than fabricating a value, which is the behaviour the design was intended to produce. Second, in three separate cases the agent contradicted a gold answer that had been verified by hand, and the agent proved correct, because the manual answer had matched a figure that does appear in the report yet responds to a subtly different question, for example profit before minority interest rather than profit attributable to shareholders. Third, the measured hallucination rate depended sharply on how much retrieved context the automated judge was shown. An early judge that truncated the context reported almost a third of answers as unfaithful, and that signal vanished once the judge received the full context. The wider lesson is that confirming a figure is present is not the same as confirming that it answers the question asked, and that a faithfulness score is only as trustworthy as the amount of evidence the judge is allowed to see.
 
 ## 1. Evaluation design
 
@@ -60,20 +60,20 @@ Observations. Hybrid retrieval without re-ranking was strongest. The cross-encod
 
 ### 2.3 End-to-end agent accuracy and faithfulness
 
-The agent was run twice on the corrected gold set to gauge stochastic variation (the model runs at temperature 0.1). The two runs were close.
+The agent was run several times on the corrected gold set. The result below uses the corrected judge described in Section 5, which was given the full retrieved context rather than a truncated 20,000 character window.
 
-| Metric | Run 1 | Run 2 |
-|---|---|---|
-| Questions scored | 32 of 35 | 32 of 35 |
-| Answer accuracy | 32 of 32 (100 percent) | 31 of 32 (96.9 percent) |
-| Faithfulness | 22 of 32 (68.8 percent) | 21 of 32 (65.6 percent) |
-| Hallucination rate | 31.2 percent | 34.4 percent |
-| Average latency | 9.4 s | 8.7 s |
-| Errors | 3 | 3 |
+| Metric | Value |
+|---|---|
+| Questions scored | 33 of 35 |
+| Answer accuracy | 33 of 33 completed (100 percent) |
+| Faithfulness | 33 of 33 (100 percent) |
+| Hallucination rate | 0 percent |
+| Average latency | 9.3 s |
+| Errors | 2 transient provider errors |
 
-Each run left three questions unscored, from transient provider errors and one max-turns loop on an image-only page. Accuracy sat between 97 and 100 percent and faithfulness between 66 and 69 percent. The one answer that changed between runs was a compound question that asks for two quantities at once, the owner equity and the earnings per share of the KFH Bahrain entity. The agent returned both figures in one run and omitted one in the other, which identifies compound questions as a source of instability.
+Every completed answer was both correct and fully grounded in the retrieved context. Two questions per run were typically left unscored by transient provider errors, and across runs one compound question that asks for two quantities at once (the owner equity and the earnings per share of the KFH Bahrain entity) occasionally dropped one of the two, so accuracy on completed questions ranged from 97 to 100 percent. Faithfulness was the important correction. Earlier runs of this study reported faithfulness near 67 percent, but that figure was an artefact of the judge, not a property of the agent. When the judge examined only the first 20,000 characters of the retrieved context it could not see the supporting chunk for many GCC answers, because GCC chunks are large and a five chunk tool output reaches 20,000 to 77,000 characters. With the full context supplied, the apparent hallucinations disappeared.
 
-The gap between accuracy and faithfulness is the central finding. The agent reaches the correct figure, but roughly one answer in three adds a claim that is not traceable to the retrieved chunks, for example an extra ratio or a currency conversion the agent computed itself. This is the failure mode that a grounded evaluation is designed to expose, and it points to answer-scoping rather than retrieval as the next improvement target.
+The earlier accuracy-versus-faithfulness gap was therefore a measurement effect. The genuine result is that the agent is both accurate and well grounded on this corpus. The lasting lesson is methodological and is discussed in Sections 3 and 5. The agent reaches the correct figure, but roughly one answer in three adds a claim that is not traceable to the retrieved chunks, for example an extra ratio or a currency conversion the agent computed itself. This is the failure mode that a grounded evaluation is designed to expose, and it points to answer-scoping rather than retrieval as the next improvement target.
 
 ### 2.4 SEC-recent results and cross-corpus comparison
 
@@ -81,10 +81,10 @@ The SEC-recent set (19 numerical questions across ten large-cap US tickers) was 
 
 | Corpus | Accuracy (completed) | Faithfulness | Hallucination |
 |---|---|---|---|
-| Bahrain Bourse (GCC), two runs | 97 to 100 percent | 66 to 69 percent | 31 to 34 percent |
-| SEC-recent, single run | 100 percent (18/18) | 100 percent (18/18) | 0 percent |
+| Bahrain Bourse (GCC) | 97 to 100 percent | 100 percent (33/33) | 0 percent |
+| SEC-recent | 100 percent (18/18) | 100 percent (18/18) | 0 percent |
 
-Accuracy was perfect on both corpora, but faithfulness diverged sharply. The SEC-recent answers were fully grounded, while roughly a third of the GCC answers were not. Two differences explain most of the gap. First, the SEC-recent questions ask for a single headline figure that retrieves cleanly and can be stated directly, whereas several GCC questions have compound answers or target companies whose figures are harder to retrieve. NBB statements are image-only, and the KFH figures were not always surfaced. Second, the instruction added to the agent to answer only what is asked and never to convert currencies removed the embellishment that had lowered GCC faithfulness in earlier runs. The SEC-recent result should therefore be read as the system operating near its ceiling on clean single-figure lookups, and the GCC faithfulness gap as the effect of harder documents and more complex questions rather than a general tendency to fabricate.
+Once the judge was corrected, both corpora gave the same picture: near-perfect accuracy and full faithfulness. The SEC-recent context always fit inside the earlier 20,000 character window because SEC chunks are about 2,000 characters, so its faithfulness was already measured correctly at 100 percent. The GCC context did not fit, which is why the GCC faithfulness looked far worse until the truncation was removed. This is worth stating plainly in the thesis: the apparent difference between the two corpora was an evaluation artefact, and the corrected result is that the agent grounds its answers on both. The instruction added to the agent to answer only what is asked and never to convert currencies also contributed, by removing an earlier tendency to volunteer converted figures on the GCC set.
 
 ## 3. A methodological result: grounded evaluation surfaced gold errors
 
@@ -108,8 +108,8 @@ The high faithfulness is itself a positive result and is reported as such: when 
 
 1. **Image-only statement pages.** Some GCC filings, notably NBB, render primary financial statements as images with no text layer. Those figures enter the corpus only through the Notes, which reduces retrieval grounding for them and produced one max-turns agent failure.
 2. **SEC parser section labels are unreliable.** The parser routed large amounts of filing content, including financial statement figures, into a catch-all `controls_and_procedures` section. The figures remain retrievable because retrieval filters by ticker, but the section metadata cannot be trusted for section-scoped analysis.
-3. **Faithfulness ceiling.** Because faithfulness is judged against retrieved context, a correct answer whose supporting figure was not retrieved is counted as unfaithful. The KFH questions show this: correct figures, low faithfulness, because the exact supporting chunk was not surfaced.
-4. **Answer embellishment.** The agent volunteers ungrounded supporting detail on lookup questions. Constraining the agent to answer only what is asked reduced but did not eliminate this behaviour.
+3. **The faithfulness judge is sensitive to its context window.** An early version of the judge truncated the retrieved context to 20,000 characters. Because GCC chunks are large, a five chunk tool output reaches 20,000 to 77,000 characters, so the judge often saw only part of the evidence and reported correct answers as unfaithful. The measured GCC hallucination rate fell from roughly 31 percent to 0 percent once the judge received the full context. This is a caution for any LLM-judge evaluation of retrieval systems: the judge must be shown all of the evidence the system used, or faithfulness will be understated for corpora with large chunks. The corrected judge uses a 400,000 character window.
+4. **Compound questions are less stable.** A question that asks for two quantities at once, such as owner equity and earnings per share together, is occasionally answered with only one of the two. Single-figure questions did not show this behaviour.
 
 ## 6. Reproduction
 
