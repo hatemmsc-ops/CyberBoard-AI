@@ -56,9 +56,15 @@ def judge_answer(question: str, gold: str, predicted: str, context: str) -> dict
     from google.genai import types
     from src.pipeline.embedder import get_client
 
+    # The judge must see all of the context the agent actually retrieved, or a
+    # correctly grounded answer can be scored unfaithful because its supporting
+    # chunk fell past the cutoff. GCC's full_document chunks push a 5-chunk tool
+    # output to 20k-77k characters, so the cap is set well above that. Gemini
+    # Flash has a ~1M token window, so even the largest context fits with room.
+    MAX_CONTEXT_CHARS = 400000
     prompt = _JUDGE_PROMPT.format(
         question=question, gold=gold, predicted=predicted,
-        context=context[:20000] if context else "(no context retrieved)",
+        context=context[:MAX_CONTEXT_CHARS] if context else "(no context retrieved)",
     )
 
     client = get_client()
