@@ -21,6 +21,44 @@ HYBRID_ALPHA = 0.7  # weight for dense vs sparse (1.0 = all dense, 0.0 = all spa
 RERANKER_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 COLLECTION_NAME = "sec_filings"
 
+# Demo showcase corpus (Ajyad Capital annual reports) — separate collection,
+# not part of the thesis's formal SEC/GCC evaluation corpus or its chunk counts.
+AJYAD_DEMO_DIR = DATA_DIR / "ajyad_demo"
+AJYAD_DEMO_COLLECTION_NAME = "ajyad_capital_demo"
+
+# GCC cross-market evaluation corpus (Bahrain Bourse-listed company filings).
+# Part of the thesis's formal evaluation, but kept in its own collection so the
+# SEC "sec_filings" corpus (18,136 chunks) and its results stay reproducible.
+BAHRAIN_BOURSE_DIR = DATA_DIR / "bahrain_bourse"
+BAHRAIN_BOURSE_COLLECTION_NAME = "bahrain_bourse"
+
+# Folder name -> (ticker, filing_year) for the Bahrain Bourse corpus. Tickers
+# match Bahrain Bourse trading symbols so ticker-filtered retrieval works.
+BAHRAIN_BOURSE_COMPANIES = {
+    "NBB": ("NBB", "2024"),
+    "BBK": ("BBK", "2025"),
+    "Alba": ("ALBH", "2025"),
+    "Batelco": ("BEYON", "2023"),
+    "GFH": ("GFH", "2025"),
+    "BisB": ("BISB", "2025"),
+    "KFH": ("KFH", "2025"),
+}
+
+# Set of Bahrain Bourse trading tickers, used to route retrieval to the right
+# collection at query time.
+BAHRAIN_BOURSE_TICKERS = {t for t, _ in BAHRAIN_BOURSE_COMPANIES.values()}
+
+
+def collection_for_ticker(ticker: str) -> str:
+    """Return the ChromaDB collection that holds filings for a given ticker.
+
+    GCC (Bahrain Bourse) tickers live in their own collection; everything else
+    is a US SEC filer in the default sec_filings collection.
+    """
+    if ticker and ticker.upper() in BAHRAIN_BOURSE_TICKERS:
+        return BAHRAIN_BOURSE_COLLECTION_NAME
+    return COLLECTION_NAME
+
 COMPANIES = {
     "AAPL": "0000320193",
     "MSFT": "0000789019",

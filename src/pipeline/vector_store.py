@@ -22,6 +22,24 @@ def confidence_from_result(result: dict) -> float:
     return float(result.get("score", 0.0))
 
 
+_STORE_CACHE: dict = {}
+
+
+def get_cached_store(collection_name: str = config.COLLECTION_NAME) -> "HybridStore":
+    """Return a process-wide HybridStore for a collection, building its BM25
+    index once and reusing it. Tools instantiate a store on every call, so
+    without this the BM25 index is rebuilt on every retrieval; caching keeps a
+    long agent run (and the eval harness) tractable.
+    """
+    store = _STORE_CACHE.get(collection_name)
+    if store is None:
+        store = HybridStore(collection_name=collection_name)
+        if store.collection.count() > 0:
+            store.rebuild_bm25_from_collection()
+        _STORE_CACHE[collection_name] = store
+    return store
+
+
 class HybridStore:
     """Combines dense (ChromaDB) and sparse (BM25) retrieval with reranking."""
 

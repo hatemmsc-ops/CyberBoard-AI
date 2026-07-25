@@ -9,21 +9,19 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 @function_tool
 def risk_identifier(ticker: str, risk_category: str = "") -> str:
-    """Retrieve risk factors disclosed in SEC filings for a given company.
-    Use this tool when the user asks about risks, threats, vulnerabilities,
-    challenges, or concerns facing a company.
+    """Retrieve risk factors disclosed in a company's filings (US SEC reports or
+    Bahrain Bourse annual reports). Use this tool when the user asks about risks,
+    threats, vulnerabilities, challenges, or concerns facing a company.
 
     Args:
-        ticker: Stock ticker symbol (e.g. AAPL, MSFT).
+        ticker: Stock ticker symbol (e.g. AAPL, MSFT for US; NBB, BBK, ALBH for Bahrain Bourse).
         risk_category: Optional filter like 'regulatory', 'market', 'operational', 'cybersecurity', 'supply chain'.
     """
-    from src.pipeline.vector_store import HybridStore, confidence_from_result
+    from src.pipeline.vector_store import get_cached_store, confidence_from_result
     from src.pipeline.embedder import embed_batch, get_client
     import config
 
-    store = HybridStore()
-    if not store.bm25:
-        store.rebuild_bm25_from_collection()
+    store = get_cached_store(config.collection_for_ticker(ticker))
 
     query = f"{ticker} risk factors"
     if risk_category:
