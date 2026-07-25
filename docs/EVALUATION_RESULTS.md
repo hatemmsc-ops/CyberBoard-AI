@@ -60,15 +60,18 @@ Observations. Hybrid retrieval without re-ranking was strongest. The cross-encod
 
 ### 2.3 End-to-end agent accuracy and faithfulness
 
-On the corrected gold set, every question the agent completed was answered correctly.
+The agent was run twice on the corrected gold set to gauge stochastic variation (the model runs at temperature 0.1). The two runs were close.
 
-| Metric | Value |
-|---|---|
-| Answer accuracy | 32 of 32 completed (100 percent); 91.4 percent if the 3 errored questions are counted as failures |
-| Faithfulness | 22 of 32 (68.8 percent) |
-| Hallucination rate | 31.2 percent |
-| Average latency | 9.4 seconds |
-| Errors | 3 (2 transient provider errors, 1 max-turns loop on an image-only page) |
+| Metric | Run 1 | Run 2 |
+|---|---|---|
+| Questions scored | 32 of 35 | 32 of 35 |
+| Answer accuracy | 32 of 32 (100 percent) | 31 of 32 (96.9 percent) |
+| Faithfulness | 22 of 32 (68.8 percent) | 21 of 32 (65.6 percent) |
+| Hallucination rate | 31.2 percent | 34.4 percent |
+| Average latency | 9.4 s | 8.7 s |
+| Errors | 3 | 3 |
+
+Each run left three questions unscored, from transient provider errors and one max-turns loop on an image-only page. Accuracy sat between 97 and 100 percent and faithfulness between 66 and 69 percent. The one answer that changed between runs was a compound question that asks for two quantities at once, the owner equity and the earnings per share of the KFH Bahrain entity. The agent returned both figures in one run and omitted one in the other, which identifies compound questions as a source of instability.
 
 The gap between accuracy and faithfulness is the central finding. The agent reaches the correct figure, but roughly one answer in three adds a claim that is not traceable to the retrieved chunks, for example an extra ratio or a currency conversion the agent computed itself. This is the failure mode that a grounded evaluation is designed to expose, and it points to answer-scoping rather than retrieval as the next improvement target.
 
@@ -78,8 +81,8 @@ The SEC-recent set (19 numerical questions across ten large-cap US tickers) was 
 
 | Corpus | Accuracy (completed) | Faithfulness | Hallucination |
 |---|---|---|---|
-| Bahrain Bourse (GCC) | 100 percent (32/32) | 68.8 percent (22/32) | 31.2 percent |
-| SEC-recent | 100 percent (18/18) | 100 percent (18/18) | 0 percent |
+| Bahrain Bourse (GCC), two runs | 97 to 100 percent | 66 to 69 percent | 31 to 34 percent |
+| SEC-recent, single run | 100 percent (18/18) | 100 percent (18/18) | 0 percent |
 
 Accuracy was perfect on both corpora, but faithfulness diverged sharply. The SEC-recent answers were fully grounded, while roughly a third of the GCC answers were not. Two differences explain most of the gap. First, the SEC-recent questions ask for a single headline figure that retrieves cleanly and can be stated directly, whereas several GCC questions have compound answers or target companies whose figures are harder to retrieve. NBB statements are image-only, and the KFH figures were not always surfaced. Second, the instruction added to the agent to answer only what is asked and never to convert currencies removed the embellishment that had lowered GCC faithfulness in earlier runs. The SEC-recent result should therefore be read as the system operating near its ceiling on clean single-figure lookups, and the GCC faithfulness gap as the effect of harder documents and more complex questions rather than a general tendency to fabricate.
 
