@@ -72,6 +72,17 @@ On the corrected gold set, every question the agent completed was answered corre
 
 The gap between accuracy and faithfulness is the central finding. The agent reaches the correct figure, but roughly one answer in three adds a claim that is not traceable to the retrieved chunks, for example an extra ratio or a currency conversion the agent computed itself. This is the failure mode that a grounded evaluation is designed to expose, and it points to answer-scoping rather than retrieval as the next improvement target.
 
+### 2.4 SEC-recent results and cross-corpus comparison
+
+The SEC-recent set (19 numerical questions across ten large-cap US tickers) was scored the same way. One question failed on a transient provider error. The remaining 18 were all answered correctly, and all 18 were faithful to the retrieved context.
+
+| Corpus | Accuracy (completed) | Faithfulness | Hallucination |
+|---|---|---|---|
+| Bahrain Bourse (GCC) | 100 percent (32/32) | 68.8 percent (22/32) | 31.2 percent |
+| SEC-recent | 100 percent (18/18) | 100 percent (18/18) | 0 percent |
+
+Accuracy was perfect on both corpora, but faithfulness diverged sharply. The SEC-recent answers were fully grounded, while roughly a third of the GCC answers were not. Two differences explain most of the gap. First, the SEC-recent questions ask for a single headline figure that retrieves cleanly and can be stated directly, whereas several GCC questions have compound answers or target companies whose figures are harder to retrieve. NBB statements are image-only, and the KFH figures were not always surfaced. Second, the instruction added to the agent to answer only what is asked and never to convert currencies removed the embellishment that had lowered GCC faithfulness in earlier runs. The SEC-recent result should therefore be read as the system operating near its ceiling on clean single-figure lookups, and the GCC faithfulness gap as the effect of harder documents and more complex questions rather than a general tendency to fabricate.
+
 ## 3. A methodological result: grounded evaluation surfaced gold errors
 
 Three of the four answers the judge marked as "wrong but faithful" were not agent errors. They were errors in the hand-verified gold set that two prior rounds of manual figure-matching had missed. In each case the agent, grounded in the source, was correct.
@@ -88,7 +99,7 @@ The lesson for the methodology chapter is that manual figure-matching confirms a
 
 FinanceBench questions reference fiscal years 2016 to 2023. The ingested SEC corpus contains only 2024 to 2026 filings. The overlap is zero of 31 questions. When run against this corpus the agent correctly reported that the requested data was not present, so it scored 14.8 percent accuracy but 92.6 percent faithfulness. The low accuracy is therefore an artefact of a corpus-question year mismatch, not a reasoning failure.
 
-The high faithfulness is itself a positive result and is reported as such: when the underlying filing is absent, the agent abstains rather than fabricating a plausible number. This is the intended anti-hallucination behaviour. To obtain a valid SEC accuracy figure comparable to the GCC set, the SEC-recent question set (Section 1.1) was built from filings that are actually in the corpus.
+The high faithfulness is itself a positive result and is reported as such: when the underlying filing is absent, the agent abstains rather than fabricating a plausible number. This is the intended anti-hallucination behaviour. To obtain a valid SEC accuracy figure comparable to the GCC set, the SEC-recent question set (Section 1.1) was built from filings that are actually in the corpus, and its results are reported in Section 2.4.
 
 ## 5. Limitations
 
