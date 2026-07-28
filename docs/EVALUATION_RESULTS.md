@@ -86,6 +86,20 @@ The SEC-recent set (19 numerical questions across ten large-cap US tickers) was 
 
 Once the judge was corrected, both corpora gave the same picture: near-perfect accuracy and full faithfulness. The SEC-recent context always fit inside the earlier 20,000 character window because SEC chunks are about 2,000 characters, so its faithfulness was already measured correctly at 100 percent. The GCC context did not fit, which is why the GCC faithfulness looked far worse until the truncation was removed. This is worth stating plainly in the thesis: the apparent difference between the two corpora was an evaluation artefact, and the corrected result is that the agent grounds its answers on both. The instruction added to the agent to answer only what is asked and never to convert currencies also contributed, by removing an earlier tendency to volunteer converted figures on the GCC set.
 
+### 2.5 Baseline comparison
+
+To test whether the agent earns its complexity, the same question sets were answered by two baselines and scored by the same judge. The no-retrieval baseline is the chat model answering from its own training, with no access to any document. The naive RAG baseline performs a single top-five retrieval, places the passages in the prompt, and answers in one shot, with no agent loop and no tool selection. The agent is the full ReAct system.
+
+| Configuration | GCC accuracy | SEC accuracy |
+|---|---|---|
+| No retrieval | 11.4 percent (4/35) | 63.2 percent (12/19) |
+| Naive RAG | 82.9 percent (29/35) | 78.9 percent (15/19) |
+| Agent | 100 percent (33/33) | 100 percent (18/18) |
+
+Three points follow. First, retrieval is essential, and most of all for the GCC corpus. The bare model answered only 11 percent of the GCC questions but 63 percent of the SEC questions, because it has seen far more about large United States companies than about recent Bahrain Bourse filings. This is the case the system is built for: the data that a general model knows least is exactly the GCC data. Second, the agent improves on naive RAG on both corpora, by about 17 points on GCC and about 21 points on SEC. A single retrieval often returns the right document but the wrong figure, for example a prior year column or a segment total, and the agent's tool use and careful reading resolve this. Third, the no-retrieval answers were never grounded, because there was nothing to ground them in, so their faithfulness is zero by construction, while naive RAG grounded its answers well at 97 to 100 percent but stayed less accurate than the agent.
+
+The agent runs left two GCC questions and one SEC question unscored because of transient provider errors, while the two baselines completed every question. Counting those errors as failures, the agent still leads at 94.3 percent on GCC and 94.7 percent on SEC, above naive RAG on both corpora.
+
 ## 3. A methodological result: grounded evaluation surfaced gold errors
 
 Three of the four answers the judge marked as "wrong but faithful" were not agent errors. They were errors in the hand-verified gold set that two prior rounds of manual figure-matching had missed. In each case the agent, grounded in the source, was correct.
@@ -121,6 +135,10 @@ python -m src.evaluation.ablation_study --set gcc
 # End-to-end agent evaluation with the LLM judge
 python -m src.evaluation.full_eval --set gcc
 python -m src.evaluation.full_eval --set sec_recent
+
+# Baseline comparison (no retrieval and naive RAG, scored by the same judge)
+python -m src.evaluation.baselines --set gcc
+python -m src.evaluation.baselines --set sec_recent
 ```
 
 Offline contract tests: `python -m pytest tests/ -q`.
