@@ -1,6 +1,6 @@
 # CyberBoard-AI Thesis Finalization Plan
 
-Handoff plan for any Claude model (Sonnet, Opus, Fable) continuing this work. Last updated 13 July 2026 (Week 6 of 13). Read this whole file before acting.
+Finalization plan and status snapshot for the CyberBoard-AI thesis. Last updated 13 July 2026 (Week 6 of 13).
 
 ## Scope rule
 
@@ -15,7 +15,7 @@ This plan and any session using it concern ONLY the thesis (CyberBoard-AI). All 
 - Key results (all reproducible from data/financebench/eval_results.json and ablation_results.json):
   - FinanceBench retrieval hit rate 96.8% (30/31), was 54.8% before a BM25 ticker-filtering bug fix (filtering ran after global top-k selection; fixed in src/pipeline/vector_store.py).
   - Reranking contribution +12.9 points (83.9% to 96.8%). These baseline numbers were captured before dense retrieval was activated; re-running with dense active is a Week 8 task.
-- UI: Streamlit (src/ui/app.py), navy/gold theme, three modes, retrieval reasoning trace visualization working. Launch: streamlit run src/ui/app.py (or .claude/launch.json cyberboard-ui).
+- UI: Streamlit (src/ui/app.py), navy/gold theme, three modes, retrieval reasoning trace visualization working. Launch: streamlit run src/ui/app.py.
 
 ### Mid Review Report status
 
