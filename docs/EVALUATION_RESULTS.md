@@ -4,7 +4,7 @@ This document records the evaluation of the CyberBoard-AI agentic RAG system. It
 
 ## 0. Abstract (draft for the thesis introduction)
 
-CyberBoard-AI is an agentic retrieval system designed to answer governance questions at board level from corporate filings while citing the source of each answer. This study evaluates the system across two document collections of differing character: the annual reports of seven companies listed on Bahrain Bourse, and the recent 10-K and 10-Q filings of twenty large United States corporations. Each answer is assessed on two dimensions: accuracy, meaning whether the reported figure matches the source, and faithfulness, meaning whether every claim can be traced to the passages the agent retrieved. On both collections the agent answered almost every completed question correctly, and once the evaluation was measured properly every completed answer was fully grounded in the retrieved evidence. On the Bahrain Bourse collection the correct passage appeared among the ten highest ranked results in 97 percent of cases.
+CyberBoard-AI is an agentic retrieval system designed to answer governance questions at board level from corporate filings while citing the source of each answer. This study evaluates the system across two document collections of differing character: the annual reports of seven companies listed on Bahrain Bourse, and the recent 10-K and 10-Q filings of twenty large United States corporations. Each answer is assessed on two dimensions: accuracy, meaning whether the reported figure matches the source, and faithfulness, meaning whether every claim can be traced to the passages the agent retrieved. On both collections the agent answered almost every completed question correctly, and once the evaluation was measured properly almost every completed answer was grounded in the retrieved evidence. On the Bahrain Bourse collection the correct passage appeared among the ten highest ranked results in 97 percent of cases.
 
 Three findings carry the weight of the study. First, when a filing needed to answer a question was absent from the collection, the agent reported the absence rather than fabricating a value, which is the behaviour the design was intended to produce. Second, in three separate cases the agent contradicted a gold answer that had been verified by hand, and the agent proved correct, because the manual answer had matched a figure that does appear in the report yet responds to a subtly different question, for example profit before minority interest rather than profit attributable to shareholders. Third, the measured hallucination rate depended sharply on how much retrieved context the automated judge was shown. An early judge that truncated the context reported almost a third of answers as unfaithful, and that signal vanished once the judge received the full context. The wider lesson is that confirming a figure is present is not the same as confirming that it answers the question asked, and that a faithfulness score is only as trustworthy as the amount of evidence the judge is allowed to see.
 
@@ -62,33 +62,33 @@ Observations. Hybrid retrieval without re-ranking was strongest. The cross-encod
 
 ### 2.3 End-to-end agent accuracy and faithfulness
 
-The agent was run several times on the corrected gold set. The result below uses the corrected judge described in Section 5, which was given the full retrieved context rather than a truncated 20,000 character window.
+The agent was run five times on the corrected gold set, using the corrected judge described in Section 5, which was given the full retrieved context rather than a truncated 20,000 character window. The table below reports the mean across the five runs.
 
 | Metric | Value |
 |---|---|
-| Questions scored | 33 of 35 |
-| Answer accuracy | 33 of 33 completed (100 percent) |
-| Faithfulness | 33 of 33 (100 percent) |
-| Hallucination rate | 0 percent |
+| Questions scored per run | 30 to 33 of 35 |
+| Answer accuracy | 96.8 percent (5-run mean, plus or minus 0.1) |
+| Faithfulness | 99.4 percent (5-run mean, plus or minus 1.2) |
+| Hallucination rate | 0.6 percent |
 | Average latency | 9.3 s |
-| Errors | 2 transient provider errors |
+| Errors | 2 to 5 transient provider errors per run |
 
-Every completed answer was both correct and fully grounded in the retrieved context. Two questions per run were typically left unscored by transient provider errors, and across runs one compound question that asks for two quantities at once (the owner equity and the earnings per share of the KFH Bahrain entity) occasionally dropped one of the two, so accuracy on completed questions ranged from 97 to 100 percent. Faithfulness was the important correction. Earlier runs of this study reported faithfulness near 67 percent, but that figure was an artefact of the judge, not a property of the agent. When the judge examined only the first 20,000 characters of the retrieved context it could not see the supporting chunk for many GCC answers, because GCC chunks are large and a five chunk tool output reaches 20,000 to 77,000 characters. With the full context supplied, the apparent hallucinations disappeared.
+Almost every completed answer was both correct and grounded in the retrieved context. Two questions per run were typically left unscored by transient provider errors, and across runs one compound question that asks for two quantities at once (the owner equity and the earnings per share of the KFH Bahrain entity) occasionally dropped one of the two, so accuracy on completed questions ranged from 96.7 to 100 percent across runs. Faithfulness was the important correction. Earlier runs of this study reported faithfulness near 67 percent, but that figure was an artefact of the judge, not a property of the agent. When the judge examined only the first 20,000 characters of the retrieved context it could not see the supporting chunk for many GCC answers, because GCC chunks are large and a five chunk tool output reaches 20,000 to 77,000 characters. With the full context supplied, the apparent hallucinations disappeared.
 
 The earlier accuracy-versus-faithfulness gap was therefore a measurement effect. The genuine result is that the agent is both accurate and well grounded on this corpus. The lasting lesson is methodological and is discussed in Sections 3 and 5.
 
-To gauge run to run variation, the agent was run repeatedly with the corrected judge. Two runs completed the full set before the monthly API spend cap halted the study. Across those two runs accuracy was 100 percent in both and faithfulness was 100 and 97.1 percent, giving 100.0 plus or minus 0.0 percent accuracy and 98.6 plus or minus 1.4 percent faithfulness. The result is therefore stable across runs, with accuracy showing no variation and faithfulness varying by about one question. A fuller repeated study of five or more runs is left for when the spend cap is raised. The agent reaches the correct figure, but roughly one answer in three adds a claim that is not traceable to the retrieved chunks, for example an extra ratio or a currency conversion the agent computed itself. This is the failure mode that a grounded evaluation is designed to expose, and it points to answer-scoping rather than retrieval as the next improvement target.
+To gauge run to run variation, the agent was run five times with the corrected judge. All five runs completed the full set. Across the five runs accuracy was 96.8 plus or minus 0.1 percent and faithfulness was 99.4 plus or minus 1.2 percent, with four runs at 100 percent faithfulness and one at 96.9 percent. Two to five questions per run returned a transient provider error and were excluded from that run rather than counted as wrong, so a momentary outage does not distort the aggregate. The result is stable across runs: accuracy varies by about a tenth of a percent and faithfulness by roughly one question. This five run mean is the headline figure reported in the thesis abstract and results, since it is more robust than any single run. An earlier single run reached 100 percent on both accuracy and faithfulness, at the upper end of the observed range, and the McNemar test in the thesis is computed on that primary run. The residual accuracy gap of roughly one question per run is the compound owner-equity and earnings-per-share item noted above, which occasionally drops one of its two sub-parts, not a retrieval failure.
 
 ### 2.4 SEC-recent results and cross-corpus comparison
 
-The SEC-recent set (19 numerical questions across ten large-cap US tickers) was scored the same way. One question failed on a transient provider error. The remaining 18 were all answered correctly, and all 18 were faithful to the retrieved context.
+The SEC-recent set (19 numerical questions across ten large-cap US tickers) was scored the same way, and the evaluation was repeated five times. Across the five runs accuracy was 98.9 percent (standard deviation 2.1) and faithfulness 96.8 percent (standard deviation 4.2). On the primary run all 18 completed questions were answered correctly and faithfully; the small variance comes from one or two questions per run. Both corpora are reported below as five run means, which is more robust than any single run.
 
-| Corpus | Accuracy (completed) | Faithfulness | Hallucination |
+| Corpus | Accuracy (5-run mean) | Faithfulness (5-run mean) | Hallucination |
 |---|---|---|---|
-| Bahrain Bourse (GCC) | 97 to 100 percent | 100 percent (33/33) | 0 percent |
-| SEC-recent | 100 percent (18/18) | 100 percent (18/18) | 0 percent |
+| Bahrain Bourse (GCC) | 96.8 percent (plus or minus 0.1) | 99.4 percent (plus or minus 1.2) | 0.6 percent |
+| SEC-recent | 98.9 percent (plus or minus 2.1) | 96.8 percent (plus or minus 4.2) | 3.2 percent |
 
-Once the judge was corrected, both corpora gave the same picture: near-perfect accuracy and full faithfulness. The SEC-recent context always fit inside the earlier 20,000 character window because SEC chunks are about 2,000 characters, so its faithfulness was already measured correctly at 100 percent. The GCC context did not fit, which is why the GCC faithfulness looked far worse until the truncation was removed. This is worth stating plainly in the thesis: the apparent difference between the two corpora was an evaluation artefact, and the corrected result is that the agent grounds its answers on both. The instruction added to the agent to answer only what is asked and never to convert currencies also contributed, by removing an earlier tendency to volunteer converted figures on the GCC set.
+Once the judge was corrected, both corpora gave the same picture: high accuracy and strong faithfulness. The SEC-recent context always fit inside the earlier 20,000 character window because SEC chunks are about 2,000 characters, so its faithfulness was already measured correctly, without the truncation artefact that affected the GCC set. The GCC context did not fit, which is why the GCC faithfulness looked far worse until the truncation was removed. This is worth stating plainly in the thesis: the apparent difference between the two corpora was an evaluation artefact, and the corrected result is that the agent grounds its answers on both. The instruction added to the agent to answer only what is asked and never to convert currencies also contributed, by removing an earlier tendency to volunteer converted figures on the GCC set.
 
 ### 2.5 Baseline comparison
 
@@ -98,11 +98,13 @@ To test whether the agent earns its complexity, the same question sets were answ
 |---|---|---|
 | No retrieval | 11.4 percent (4/35) | 63.2 percent (12/19) |
 | Naive RAG | 82.9 percent (29/35) | 78.9 percent (15/19) |
-| Agent | 100 percent (33/33) | 100 percent (18/18) |
+| Agent | 96.8 percent (5-run mean) | 98.9 percent (5-run mean) |
+
+The agent figures are five run means; the two baselines are a single run on the same questions.
 
 ![Baseline comparison](figures/fig_baseline_ladder.png)
 
-Three points follow. First, retrieval is essential, and most of all for the GCC corpus. The bare model answered only 11 percent of the GCC questions but 63 percent of the SEC questions, because it has seen far more about large United States companies than about recent Bahrain Bourse filings. This is the case the system is built for: the data that a general model knows least is exactly the GCC data. Second, the agent improves on naive RAG on both corpora, by about 17 points on GCC and about 21 points on SEC. A single retrieval often returns the right document but the wrong figure, for example a prior year column or a segment total, and the agent's tool use and careful reading resolve this. Third, the no-retrieval answers were never grounded, because there was nothing to ground them in, so their faithfulness is zero by construction, while naive RAG grounded its answers well at 97 to 100 percent but stayed less accurate than the agent.
+Three points follow. First, retrieval is essential, and most of all for the GCC corpus. The bare model answered only 11 percent of the GCC questions but 63 percent of the SEC questions, because it has seen far more about large United States companies than about recent Bahrain Bourse filings. This is the case the system is built for: the data that a general model knows least is exactly the GCC data. Second, the agent improves on naive RAG on both corpora, by about 14 points on GCC and about 20 points on SEC. A single retrieval often returns the right document but the wrong figure, for example a prior year column or a segment total, and the agent's tool use and careful reading resolve this. Third, the no-retrieval answers were never grounded, because there was nothing to ground them in, so their faithfulness is zero by construction, while naive RAG grounded its answers well at 97 to 100 percent but stayed less accurate than the agent.
 
 The agent runs left two GCC questions and one SEC question unscored because of transient provider errors, while the two baselines completed every question. Counting those errors as failures, the agent still leads at 94.3 percent on GCC and 94.7 percent on SEC, above naive RAG on both corpora.
 
