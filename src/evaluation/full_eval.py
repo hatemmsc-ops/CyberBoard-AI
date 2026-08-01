@@ -59,12 +59,19 @@ async def _run_agent(agent, ticker: str, question: str, max_retries: int = 4) ->
     from agents.items import ToolCallOutputItem
 
     start = time.time()
+    # A dropped provider socket can leave Runner.run blocked without ever raising,
+    # which froze an entire multi-run once. Bound each attempt so a hang becomes a
+    # retryable timeout instead of an indefinite stall.
+    AGENT_TIMEOUT_SECONDS = 180
     for attempt in range(max_retries):
         try:
-            result = await Runner.run(agent, f"Company: {ticker}. Question: {question}")
+            result = await asyncio.wait_for(
+                Runner.run(agent, f"Company: {ticker}. Question: {question}"),
+                timeout=AGENT_TIMEOUT_SECONDS,
+            )
             break
         except Exception as e:
-            if _is_transient(e) and attempt < max_retries - 1:
+            if (_is_transient(e) or isinstance(e, asyncio.TimeoutError)) and attempt < max_retries - 1:
                 await asyncio.sleep(2 ** attempt)
                 continue
             raise

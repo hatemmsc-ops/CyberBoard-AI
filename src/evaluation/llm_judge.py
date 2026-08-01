@@ -54,7 +54,7 @@ def judge_answer(question: str, gold: str, predicted: str, context: str) -> dict
                 "rationale": "empty prediction"}
 
     from google.genai import types
-    from src.pipeline.embedder import get_client
+    from src.pipeline.embedder import get_client, _executor
 
     # The judge must see all of the context the agent actually retrieved, or a
     # correctly grounded answer can be scored unfaithful because its supporting
@@ -68,14 +68,21 @@ def judge_answer(question: str, gold: str, predicted: str, context: str) -> dict
     )
 
     client = get_client()
-    resp = client.models.generate_content(
+    # google-genai's own http_options timeout is unreliable (see the embedder
+    # note), so the judge call is bounded with the same thread-pool timeout. A
+    # hung provider socket would otherwise freeze the whole evaluation run
+    # indefinitely; on timeout this raises and the caller records the question
+    # as an error and moves on.
+    JUDGE_TIMEOUT_SECONDS = 90
+    resp = _executor.submit(
+        client.models.generate_content,
         model=config.GEMINI_CHAT_MODEL,
         contents=prompt,
         config=types.GenerateContentConfig(
             temperature=0.0,
             response_mime_type="application/json",
         ),
-    )
+    ).result(timeout=JUDGE_TIMEOUT_SECONDS)
 
     try:
         data = json.loads(resp.text)
