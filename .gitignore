@@ -1,18 +1,40 @@
+# Bulk data stays out of the repository: the ChromaDB index, the raw SEC
+# filings, and the Bahrain Bourse reports total roughly 970 MB and are all
+# re-downloadable or re-buildable from the ingestion scripts.
+#
+# Evaluation RESULT files are deliberately kept IN the repository, however
+# small print they are, because every figure reported in the thesis is
+# traceable to one of them. They total under 300 KB.
 data/*
+
 !data/financebench/
 data/financebench/*
 !data/financebench/eval_results.json
 !data/financebench/ablation_results.json
 !data/financebench/matched_questions.json
+
 !data/sec_filings/
 data/sec_filings/*
 !data/sec_filings/manifest.csv
+
 !data/gcc_eval/
 data/gcc_eval/*
 !data/gcc_eval/questions.json
+!data/gcc_eval/multi_run_summary.json
+!data/gcc_eval/full_eval_results.json
+!data/gcc_eval/baseline_naive_rag_results.json
+!data/gcc_eval/baseline_no_retrieval_results.json
+!data/gcc_eval/ablation_results.json
+!data/gcc_eval/retrieval_results.json
+
 !data/sec_recent/
 data/sec_recent/*
 !data/sec_recent/questions.json
+!data/sec_recent/multi_run_summary.json
+!data/sec_recent/full_eval_results.json
+!data/sec_recent/baseline_naive_rag_results.json
+!data/sec_recent/baseline_no_retrieval_results.json
+
 __pycache__/
 *.pyc
 .env

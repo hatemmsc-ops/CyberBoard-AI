@@ -1,0 +1,47 @@
+{
+  "set": "sec_recent",
+  "n_runs": 5,
+  "valid_runs": 5,
+  "excluded_runs": 0,
+  "per_run": [
+    {
+      "run": 1,
+      "scored": 19,
+      "errors": 0,
+      "accuracy": 100.0,
+      "faithfulness": 94.73684210526316
+    },
+    {
+      "run": 2,
+      "scored": 17,
+      "errors": 2,
+      "accuracy": 100.0,
+      "faithfulness": 100.0
+    },
+    {
+      "run": 3,
+      "scored": 18,
+      "errors": 1,
+      "accuracy": 100.0,
+      "faithfulness": 100.0
+    },
+    {
+      "run": 4,
+      "scored": 19,
+      "errors": 0,
+      "accuracy": 100.0,
+      "faithfulness": 100.0
+    },
+    {
+      "run": 5,
+      "scored": 19,
+      "errors": 0,
+      "accuracy": 94.73684210526316,
+      "faithfulness": 89.47368421052632
+    }
+  ],
+  "accuracy_mean": 98.94736842105263,
+  "accuracy_std": 2.105263157894734,
+  "faithfulness_mean": 96.84210526315789,
+  "faithfulness_std": 4.2105263157894735
+}

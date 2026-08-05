@@ -1,0 +1,51 @@
+[
+  {
+    "config_name": "hybrid_rerank",
+    "total_questions": 35,
+    "retrieval_hits": 34,
+    "hit_rate": 0.9714285714285714,
+    "avg_latency": 1.3469263689858573
+  },
+  {
+    "config_name": "hybrid_no_rerank",
+    "total_questions": 35,
+    "retrieval_hits": 35,
+    "hit_rate": 1.0,
+    "avg_latency": 0.7971908433096749
+  },
+  {
+    "config_name": "dense_only",
+    "total_questions": 35,
+    "retrieval_hits": 34,
+    "hit_rate": 0.9714285714285714,
+    "avg_latency": 1.1158185550144741
+  },
+  {
+    "config_name": "sparse_only",
+    "total_questions": 35,
+    "retrieval_hits": 33,
+    "hit_rate": 0.9428571428571428,
+    "avg_latency": 0.22197603498186383
+  },
+  {
+    "config_name": "sparse_no_rerank",
+    "total_questions": 35,
+    "retrieval_hits": 32,
+    "hit_rate": 0.9142857142857143,
+    "avg_latency": 0.0010985919407435825
+  },
+  {
+    "config_name": "alpha_0.5",
+    "total_questions": 35,
+    "retrieval_hits": 34,
+    "hit_rate": 0.9714285714285714,
+    "avg_latency": 1.0456952571868896
+  },
+  {
+    "config_name": "alpha_0.9",
+    "total_questions": 35,
+    "retrieval_hits": 34,
+    "hit_rate": 0.9714285714285714,
+    "avg_latency": 1.0470340047563826
+  }
+]

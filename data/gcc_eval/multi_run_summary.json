@@ -1,0 +1,47 @@
+{
+  "set": "gcc",
+  "n_runs": 5,
+  "valid_runs": 5,
+  "excluded_runs": 0,
+  "per_run": [
+    {
+      "run": 1,
+      "scored": 32,
+      "errors": 3,
+      "accuracy": 96.875,
+      "faithfulness": 96.875
+    },
+    {
+      "run": 2,
+      "scored": 31,
+      "errors": 4,
+      "accuracy": 96.7741935483871,
+      "faithfulness": 100.0
+    },
+    {
+      "run": 3,
+      "scored": 33,
+      "errors": 2,
+      "accuracy": 96.96969696969697,
+      "faithfulness": 100.0
+    },
+    {
+      "run": 4,
+      "scored": 30,
+      "errors": 5,
+      "accuracy": 96.66666666666667,
+      "faithfulness": 100.0
+    },
+    {
+      "run": 5,
+      "scored": 30,
+      "errors": 5,
+      "accuracy": 96.66666666666667,
+      "faithfulness": 100.0
+    }
+  ],
+  "accuracy_mean": 96.79044477028349,
+  "accuracy_std": 0.11847959988965082,
+  "faithfulness_mean": 99.375,
+  "faithfulness_std": 1.25
+}

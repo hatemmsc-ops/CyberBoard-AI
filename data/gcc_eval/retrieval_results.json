@@ -1,0 +1,2627 @@
+[
+  {
+    "question_id": "gcc-nbb-01",
+    "company": "National Bank of Bahrain",
+    "ticker": "NBB",
+    "question": "What was the Group's total assets as at 31 December 2024?",
+    "gold_answer": "BHD 5,522.2 million",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 5.366609573364258
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 5.029487609863281
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.763274192810059
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.4625244140625
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.282193183898926
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.988553285598755
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.8214073181152344
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.7194831371307373
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.6711082458496094
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.4952611923217773
+      }
+    ],
+    "retrieval_hit": false,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-nbb-02",
+    "company": "National Bank of Bahrain",
+    "ticker": "NBB",
+    "question": "What was the Group's profit for the year ended 31 December 2024?",
+    "gold_answer": "BHD 83.0 million; of which BHD 81.9 million was attributable to the shareholders of the Bank",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 6.931533336639404
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 6.489577293395996
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 5.821485996246338
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 5.344210624694824
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.578962802886963
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.425028324127197
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.199737548828125
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.0984954833984375
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.056281089782715
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.054029941558838
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-nbb-03",
+    "company": "National Bank of Bahrain",
+    "ticker": "NBB",
+    "question": "What was the basic and diluted earnings per share attributable to shareholders for 2024?",
+    "gold_answer": "36 fils (10 cents) per share",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.184196949005127
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -0.26347067952156067
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -0.7504159212112427
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.7841078042984009
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -3.714325428009033
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -4.0975871086120605
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -4.316830635070801
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -4.440855979919434
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -4.831548690795898
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -5.206758499145508
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-nbb-04",
+    "company": "National Bank of Bahrain",
+    "ticker": "NBB",
+    "question": "What was the Group's total operating income for 2024?",
+    "gold_answer": "BHD 191.7 million, of which net interest income was BHD 143.4 million",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 2.212228298187256
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.9465770721435547
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.0818371772766113
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.3035858869552612
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.4043443202972412
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.4430110454559326
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.4813907146453857
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -1.6049491167068481
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -2.4502511024475098
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": -3.359147310256958
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-nbb-05",
+    "company": "National Bank of Bahrain",
+    "ticker": "NBB",
+    "question": "What were the Group's total customer deposits as at 31 December 2024?",
+    "gold_answer": "BHD 3,743.8 million",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 4.426350116729736
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.9794750213623047
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 3.178838014602661
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 2.523550033569336
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.984739065170288
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.861173152923584
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.7054342031478882
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.674187421798706
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.2401859760284424
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2024-12-31",
+        "score": 1.0428839921951294
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bbk-01",
+    "company": "Bank of Bahrain and Kuwait",
+    "ticker": "BBK",
+    "question": "What was BBK's net profit attributable to the owners of the bank for 2025?",
+    "gold_answer": "BD 80.0 million",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.47821044921875
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.2010765075683594
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.005889415740967
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.4049432277679443
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.0163720846176147
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9803602695465088
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.8949061632156372
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6568977236747742
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.5427956581115723
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.10395984351634979
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bbk-02",
+    "company": "Bank of Bahrain and Kuwait",
+    "ticker": "BBK",
+    "question": "What was BBK's capital adequacy ratio at year-end 2025?",
+    "gold_answer": "19.8%",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.94383430480957
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.529646873474121
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.346839189529419
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.17389178276062
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.9518752098083496
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7105661630630493
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.5836000442504883
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.3904929161071777
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.3534085750579834
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.04023260623216629
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bbk-03",
+    "company": "Bank of Bahrain and Kuwait",
+    "ticker": "BBK",
+    "question": "What were BBK's total assets, total equity and customer deposits in 2025?",
+    "gold_answer": "Total assets BD 4,974 million; total equity BD 660 million; customer deposits BD 2,854 million (2025)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.188430070877075
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.90289306640625
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.778791904449463
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.677745819091797
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.190713882446289
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.0902397632598877
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.5413038730621338
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.427027702331543
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.0888655185699463
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9738914966583252
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bbk-04",
+    "company": "Bank of Bahrain and Kuwait",
+    "ticker": "BBK",
+    "question": "What was BBK's diluted earnings per share in 2025?",
+    "gold_answer": "Diluted earnings per share was 44 fils in 2025 (up from 40 fils in 2024)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9619851112365723
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.6064844131469727
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.5747175216674805
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6902785301208496
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.4666304886341095
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.3073713779449463
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.17203430831432343
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.09041832387447357
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.04108882695436478
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.16923195123672485
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bbk-05",
+    "company": "Bank of Bahrain and Kuwait",
+    "ticker": "BBK",
+    "question": "What total dividend did BBK propose for 2025?",
+    "gold_answer": "Cash dividend of 40% for 2025 (2024: 35%)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.7442269325256348
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.7477943897247314
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.745828628540039
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.585839033126831
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7356393337249756
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.535332202911377
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6552317142486572
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.49158617854118347
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.31978848576545715
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.07136812806129456
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-albh-01",
+    "company": "Aluminium Bahrain (Alba)",
+    "ticker": "ALBH",
+    "question": "What was Alba's profit for the full year 2025?",
+    "gold_answer": "US$ 582 million (up 19% year-on-year from US$ 491 million in 2024)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.088673114776611
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.4802675247192383
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.3056962490081787
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.228957414627075
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.7354393005371094
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.4207022190093994
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.2482504844665527
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.4744815826416016
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.2623056173324585
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9696491360664368
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-albh-02",
+    "company": "Aluminium Bahrain (Alba)",
+    "ticker": "ALBH",
+    "question": "What was Alba's revenue from contracts with customers for 2025?",
+    "gold_answer": "US$ 4,731 million (up 10% year-on-year from US$ 4,313 million in 2024)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.2252397537231445
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.223520278930664
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.027640342712402
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.6250851154327393
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.4359564781188965
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.4827797412872314
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.101393699645996
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.0950000286102295
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.7886860370635986
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.740667462348938
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-albh-03",
+    "company": "Aluminium Bahrain (Alba)",
+    "ticker": "ALBH",
+    "question": "What was Alba's EBITDA for 2025?",
+    "gold_answer": "US$ 1,078 million (up 15% year-on-year from US$ 939 million in 2024)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.179439067840576
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.6185503005981445
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.546645402908325
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.1531026363372803
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.9954197406768799
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.8416783809661865
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.4264254570007324
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.1092956066131592
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.728834867477417
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6371731758117676
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-albh-04",
+    "company": "Aluminium Bahrain (Alba)",
+    "ticker": "ALBH",
+    "question": "Who is Alba's Chief Executive Officer and who chairs its Board of Directors?",
+    "gold_answer": "Chief Executive Officer: Ali Al Baqali. Chairman of the Board: Khalid Al Rumaihi. (Chief Financial Officer: Ricardo Santana.)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.4091570377349854
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.2782387733459473
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.061000347137451
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.799367904663086
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.589749813079834
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.9309206008911133
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7315688133239746
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.6739951372146606
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.3842332363128662
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9374783635139465
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-albh-05",
+    "company": "Aluminium Bahrain (Alba)",
+    "ticker": "ALBH",
+    "question": "What was Alba's net debt at the end of 2025 and how did it change year-on-year?",
+    "gold_answer": "US$ 564 million, an improvement of 49% from US$ 1,103 million in 2024, reflecting disciplined loan servicing",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.533025026321411
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.291170358657837
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.0787277221679688
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.6562212705612183
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.6215403079986572
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.7367073893547058
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.44741004705429077
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.3264104127883911
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.2043229341506958
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.21390387415885925
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-beyon-01",
+    "company": "Batelco (Beyon Group)",
+    "ticker": "BEYON",
+    "question": "What was Batelco Group's net profit attributable to equity holders for 2023?",
+    "gold_answer": "BD 82,036 thousand (BD 82.0 million)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.14022156596183777
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.7079434394836426
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.8004200458526611
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.8643540740013123
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -1.0013184547424316
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -1.4141167402267456
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -2.3726062774658203
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -2.425909996032715
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -2.6154448986053467
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -2.625767230987549
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-beyon-02",
+    "company": "Batelco (Beyon Group)",
+    "ticker": "BEYON",
+    "question": "What were Batelco Group's gross revenues for 2023?",
+    "gold_answer": "BD 424,904 thousand (BD 424.9 million)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.7476204633712769
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -2.7957656383514404
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -3.908127784729004
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -3.956256866455078
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -4.245799541473389
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -4.265857219696045
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -4.396394729614258
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -4.517455101013184
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -4.591992378234863
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -4.635791301727295
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-beyon-03",
+    "company": "Batelco (Beyon Group)",
+    "ticker": "BEYON",
+    "question": "What were Batelco Group's total assets as at 31 December 2023?",
+    "gold_answer": "BD 1,165,365 thousand (BD 1,165.4 million)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 4.174501895904541
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 2.674365997314453
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 2.5483131408691406
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 2.2733075618743896
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 2.2681336402893066
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 1.8194267749786377
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 1.6586271524429321
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 1.0882816314697266
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 0.974323570728302
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 0.9318157434463501
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-beyon-04",
+    "company": "Batelco (Beyon Group)",
+    "ticker": "BEYON",
+    "question": "What was Batelco Group's total equity attributable to equity holders of the Company at 31 December 2023?",
+    "gold_answer": "Total equity attributable to equity holders of the Company was BD 532,311 thousand (BD 532.3 million) at 31 December 2023",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 1.7181692123413086
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 1.2021690607070923
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 0.972903311252594
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 0.1426820456981659
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.027174338698387146
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.3554155230522156
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.6323825120925903
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.7017068266868591
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.7534129619598389
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -1.23720121383667
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-beyon-05",
+    "company": "Batelco (Beyon Group)",
+    "ticker": "BEYON",
+    "question": "What was Batelco Group's earnings per share for 2023?",
+    "gold_answer": "Earnings per share of 43.6 fils for 2023 (compared with 42.5 fils prior year)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 0.8111830949783325
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": 0.42710214853286743
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.3717502951622009
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -0.3928864598274231
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -1.7406824827194214
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -1.9367457628250122
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -2.785209894180298
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -3.331597089767456
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -3.649378776550293
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2023-12-31",
+        "score": -3.685459852218628
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-gfh-01",
+    "company": "GFH Financial Group",
+    "ticker": "GFH",
+    "question": "What was GFH's net profit attributable to shareholders for 2025?",
+    "gold_answer": "US$ 140,110 thousand (US$ 140.11 million)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.642396926879883
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.240733623504639
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.670178413391113
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.05700159072876
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.5773353576660156
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.1231508255004883
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.3725903034210205
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.0515072345733643
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.3239057064056396
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.271312952041626
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-gfh-02",
+    "company": "GFH Financial Group",
+    "ticker": "GFH",
+    "question": "What was GFH's consolidated net profit for 2025?",
+    "gold_answer": "Total profit for the year was US$ 145,504 thousand (US$ 145.5 million); of which US$ 140,110 thousand was attributable to shareholders",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.983524322509766
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.18202543258667
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.139985084533691
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.815953254699707
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.7951438426971436
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.4671146869659424
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.426274299621582
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.1121745109558105
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9402408599853516
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.7989420890808105
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-gfh-03",
+    "company": "GFH Financial Group",
+    "ticker": "GFH",
+    "question": "What were GFH's total assets at 31 December 2025?",
+    "gold_answer": "Total assets grew to approximately US$ 12.20 billion at 31 December 2025",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.526758670806885
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.470458984375
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.084410667419434
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.037442684173584
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.982773303985596
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.946537971496582
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.853174209594727
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.707921981811523
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.600654602050781
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.517839431762695
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-gfh-04",
+    "company": "GFH Financial Group",
+    "ticker": "GFH",
+    "question": "What was GFH's total equity attributable to shareholders of the Bank at 31 December 2025?",
+    "gold_answer": "Total equity attributable to shareholders of the Bank was US$ 1,020,768 thousand (US$ 1,020.8 million) at 31 December 2025",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.7605390548706055
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.205451011657715
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.517241954803467
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.84189510345459
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.8331449031829834
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.654592514038086
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.498410224914551
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.4526400566101074
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.368319272994995
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.2998244762420654
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-gfh-05",
+    "company": "GFH Financial Group",
+    "ticker": "GFH",
+    "question": "What was GFH's Tier 1 capital adequacy ratio for 2025?",
+    "gold_answer": "Capital adequacy ratio (Tier 1) was 21.68%",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.938774585723877
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.868526458740234
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.8232197761535645
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.861252784729004
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.121772766113281
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9736599922180176
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.8894667625427246
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.8126044273376465
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.5517921447753906
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.236721992492676
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bisb-01",
+    "company": "Bahrain Islamic Bank",
+    "ticker": "BISB",
+    "question": "What was BisB's net profit for 2025?",
+    "gold_answer": "BD 18,537 thousand (BD 18.5 million) net profit for the year",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 6.2632293701171875
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.2670392990112305
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.526404857635498
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.043272018432617
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.6695103645324707
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.254833459854126
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9950904846191406
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.087175130844116
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.71204674243927
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.8538720011711121
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bisb-02",
+    "company": "Bahrain Islamic Bank",
+    "ticker": "BISB",
+    "question": "What was BisB's total assets at year-end 2025?",
+    "gold_answer": "BD 1,804.3 million",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.838855266571045
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.260164737701416
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.257399082183838
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.2429325580596924
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.845519542694092
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.8896793127059937
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7511858940124512
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.1811044216156006
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.1039371490478516
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6001686453819275
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bisb-03",
+    "company": "Bahrain Islamic Bank",
+    "ticker": "BISB",
+    "question": "What was BisB's total income for 2025?",
+    "gold_answer": "Total income of BD 58.1 million for 2025 (2024: BD 40.7 million)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.787158012390137
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.553645610809326
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.1446003913879395
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.8298282623291016
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7889580726623535
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.3225038051605225
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.2497222423553467
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.04625403881073
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6786803007125854
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -1.4486891031265259
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bisb-04",
+    "company": "Bahrain Islamic Bank",
+    "ticker": "BISB",
+    "question": "What was BisB's earnings per share for 2025?",
+    "gold_answer": "Earnings per share of 15.8 fils for 2025 (2024: 3.0 fils)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 5.226371765136719
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9159910678863525
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.1557722091674805
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.035059928894043
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7582266330718994
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.006023645401001
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.779143214225769
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.7075380682945251
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6673312187194824
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.3695685863494873
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-bisb-05",
+    "company": "Bahrain Islamic Bank",
+    "ticker": "BISB",
+    "question": "What was BisB's capital adequacy ratio at year-end 2025?",
+    "gold_answer": "Capital adequacy ratio of 24.9% at end 2025 (2024: 20.4%)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.459172248840332
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.320135593414307
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.169209003448486
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.2313289642333984
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.147268295288086
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9632599353790283
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.9358508586883545
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.576678514480591
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.494861125946045
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.224731922149658
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-kfh-01",
+    "company": "Kuwait Finance House (Bahrain, incl. former Ahli United Bank)",
+    "ticker": "KFH",
+    "question": "What was KFH Group's net profit attributable to shareholders for 2025?",
+    "gold_answer": "US$ 730,585 thousand (US$ 730.6 million)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.5938963890075684
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.0346686840057373
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.6812663078308105
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.2976832389831543
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.8610620498657227
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.722634196281433
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9685647487640381
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9068865776062012
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.8812183141708374
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.46884000301361084
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-kfh-02",
+    "company": "Kuwait Finance House (Bahrain, incl. former Ahli United Bank)",
+    "ticker": "KFH",
+    "question": "What was KFH Group's total assets at year-end 2025?",
+    "gold_answer": "US$ 29,007,902 thousand (US$ 29.01 billion)",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 4.959524154663086
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.653254508972168
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.3901493549346924
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.4661271572113037
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.4556760787963867
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.182736873626709
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.8864697217941284
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7315731048583984
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.2010804414749146
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.5695748329162598
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-kfh-03",
+    "company": "Kuwait Finance House (Bahrain, incl. former Ahli United Bank)",
+    "ticker": "KFH",
+    "question": "Under what name does the report present the Bahrain entity formerly known as Ahli United Bank?",
+    "gold_answer": "The Bahrain entity is Kuwait Finance House B.S.C. (c), formerly Ahli United Bank B.S.C. (c); the report presents its results in the KFH Group financial highlights",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 3.855282783508301
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.7834707498550415
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.5906782150268555
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.5878251791000366
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.4309648275375366
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.0194909572601318
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.6128417253494263
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.23750609159469604
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.41965168714523315
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.6301361322402954
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-kfh-04",
+    "company": "Kuwait Finance House (Bahrain, incl. former Ahli United Bank)",
+    "ticker": "KFH",
+    "question": "What was the Bahrain entity's owner equity and earnings per share at Dec 2025?",
+    "gold_answer": "Owner equity of US$ 5,164,907 thousand (US$ 5.16 billion) and earnings per share of 6.3 US cents for Dec 2025",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 2.1903607845306396
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.5899276733398438
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.2288250923156738
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.9308857917785645
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.10210941731929779
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.8223170638084412
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -1.0353479385375977
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -1.5418522357940674
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -2.0259358882904053
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -2.804887533187866
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  },
+  {
+    "question_id": "gcc-kfh-05",
+    "company": "Kuwait Finance House (Bahrain, incl. former Ahli United Bank)",
+    "ticker": "KFH",
+    "question": "What was the Bahrain entity's risk assets ratio (capital adequacy) at Dec 2025?",
+    "gold_answer": "Risk assets ratio (capital adequacy) of 31.4% at Dec 2025",
+    "predicted_answer": "",
+    "retrieved_sections": [
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.8785758018493652
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.5394456386566162
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 1.2624619007110596
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.49009981751441956
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.43380942940711975
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.2962825894355774
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": 0.11672535538673401
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.1909862607717514
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.4208725690841675
+      },
+      {
+        "section": "full_document",
+        "filing_type": "Annual Report",
+        "filing_date": "2025-12-31",
+        "score": -0.7355101704597473
+      }
+    ],
+    "retrieval_hit": true,
+    "answer_correct": false,
+    "answer_faithful": false,
+    "latency_seconds": 0.0,
+    "error": ""
+  }
+]
