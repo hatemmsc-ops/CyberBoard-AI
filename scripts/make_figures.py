@@ -38,22 +38,39 @@ def accuracy(path: Path) -> float:
     return 100 * sum(r["correct"] for r in scored) / (len(scored) or 1)
 
 
+def agent_accuracy(corpus_dir: Path) -> float:
+    """The agent bar is the mean over five runs, not a single run.
+
+    A single run of the agent scores 100 percent on both corpora, but that is
+    the top of the range rather than the expected value, and Table 3 of the
+    thesis reports the five-run mean. Reading the mean here keeps the figure
+    and the table telling the same story.
+    """
+    return json.load(open(corpus_dir / "multi_run_summary.json"))["accuracy_mean"]
+
+
 def baseline_ladder():
     corpora = [("GCC (Bahrain Bourse)", "gcc_eval"), ("SEC-recent (US)", "sec_recent")]
+    # The two baselines are a single run on the same questions; the agent is the
+    # five-run mean. This mirrors Table 3 exactly, including its caption.
     configs = [
         ("No retrieval", "baseline_no_retrieval_results.json", BLUE_LIGHT),
         ("Naive RAG", "baseline_naive_rag_results.json", BLUE_MID),
-        ("Agent (ReAct)", "full_eval_results.json", BLUE_DARK),
+        ("Agent (ReAct), 5-run mean", None, BLUE_DARK),
     ]
     fig, ax = plt.subplots(figsize=(7.2, 4.2))
     width, xs = 0.26, range(len(corpora))
     for j, (label, fname, colour) in enumerate(configs):
-        vals = [accuracy(DATA / d / fname) for _, d in corpora]
+        if fname is None:
+            vals = [agent_accuracy(DATA / d) for _, d in corpora]
+        else:
+            vals = [accuracy(DATA / d / fname) for _, d in corpora]
         pos = [x + (j - 1) * width for x in xs]
         bars = ax.bar(pos, vals, width, label=label, color=colour,
                       edgecolor="white", linewidth=0.8, zorder=3)
         for b, v in zip(bars, vals):
-            ax.text(b.get_x() + b.get_width() / 2, v + 1.5, f"{v:.0f}",
+            # One decimal, so every printed value matches Table 3 digit for digit.
+            ax.text(b.get_x() + b.get_width() / 2, v + 1.5, f"{v:.1f}",
                     ha="center", va="bottom", fontsize=9.5, color=INK)
     ax.set_xticks(list(xs)); ax.set_xticklabels([c for c, _ in corpora])
     ax.set_ylabel("Answer accuracy (percent)"); ax.set_ylim(0, 108)
