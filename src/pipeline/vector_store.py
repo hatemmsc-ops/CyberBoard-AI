@@ -1,9 +1,13 @@
 """ChromaDB + BM25 hybrid retrieval with cross-encoder reranking."""
 
 import numpy as np
-import chromadb
 from rank_bm25 import BM25Okapi
-from sentence_transformers import CrossEncoder
+
+# chromadb and sentence-transformers are imported where they are used rather
+# than here. Each is needed at exactly one call site, and sentence-transformers
+# pulls in torch, so importing both eagerly costs roughly a gigabyte of
+# dependencies just to read this module. Deferring them keeps the scoring logic
+# importable on its own, which is what the offline retrieval tests rely on.
 
 import sys
 from pathlib import Path
@@ -47,6 +51,8 @@ class HybridStore:
         if persist_dir is None:
             persist_dir = config.CHROMA_DIR
         persist_dir.mkdir(parents=True, exist_ok=True)
+
+        import chromadb
 
         self.chroma_client = chromadb.PersistentClient(path=str(persist_dir))
         self.collection = self.chroma_client.get_or_create_collection(
@@ -210,6 +216,8 @@ class HybridStore:
 
     def _rerank(self, query: str, candidates: list[dict], k: int) -> list[dict]:
         if self.reranker is None:
+            from sentence_transformers import CrossEncoder
+
             self.reranker = CrossEncoder(config.RERANKER_MODEL)
         pairs = [(query, c["text"]) for c in candidates]
         scores = self.reranker.predict(pairs)
