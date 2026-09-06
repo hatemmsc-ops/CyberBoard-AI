@@ -1,8 +1,16 @@
 # CyberBoard-AI
 
-An AI advisory board agent for corporate governance: a RAG-based agentic system with explainable financial reasoning.
+[![tests](https://github.com/hatemmsc-ops/CyberBoard-AI/actions/workflows/tests.yml/badge.svg)](https://github.com/hatemmsc-ops/CyberBoard-AI/actions/workflows/tests.yml)
+[![python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)](https://www.python.org/)
+[![license](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-MSc Artificial Intelligence thesis project, Bahrain Polytechnic, 2026. Student: Hatem Isa (202508993). Supervisor: Dr. Joshua Samuel.
+An AI advisory board agent for corporate governance: a RAG based agentic system with explainable financial reasoning.
+
+Ask a question about a listed company and get an answer where every claim carries the filing, the date, and the item number it came from. If the filings do not support an answer, the agent says so instead of producing one.
+
+MSc Artificial Intelligence thesis project, Bahrain Polytechnic, 2026. Hatem Isa, supervised by Dr. Joshua Samuel.
+
+![CyberBoard-AI answering a question about Apple's risk factors, with each claim cited to a specific SEC filing, date, part and item](docs/figures/screenshot_grounded_answer.png)
 
 ## What it does
 
@@ -36,7 +44,9 @@ Query → dense embed ────┘
 | Bahrain Bourse (GCC), 35 questions | 96.8% ± 0.1% | 99.4% ± 1.2% |
 | SEC-recent (US), 19 questions | 98.9% ± 2.1% | 96.8% ± 4.2% |
 
-On the GCC set this compares with 82.9% for single-pass RAG and 11.4% for a closed-book model with no retrieval. A paired McNemar test on the primary run finds the agent strictly superior (five wins, zero losses, exact p 0.0625). Full detail in [`docs/EVALUATION_RESULTS.md`](docs/EVALUATION_RESULTS.md).
+On the GCC set this compares with 82.9% for single-pass RAG and 11.4% for a closed-book model with no retrieval.
+
+**Grounding is the point, not accuracy alone.** The closed-book baseline produced an unsupported claim on all 54 evaluation questions, including ones it answered correctly from memory. An answer that happens to be right but cites nothing is indistinguishable, to the reader, from one that is wrong. Retrieval reduced unsupported claims to 0.6% on the GCC set and 3.3% on the US set, 1.6% pooled over five runs. A paired McNemar test on the primary run finds the agent strictly superior (five wins, zero losses, exact p 0.0625). Full detail in [`docs/EVALUATION_RESULTS.md`](docs/EVALUATION_RESULTS.md).
 
 **Retrieval and a fixed defect.** An early version had a bug: the BM25 sparse retriever filtered by company ticker *after* selecting the global top-k candidates across all 20 companies, so a company's own filings could be silently dropped from its own results. Fixing this raised FinanceBench retrieval hit rate from **54.8% to 96.8%**, and the measured contribution of cross-encoder reranking rose from **+3.2 to +12.9 percentage points** (see `data/financebench/ablation_results.json`).
 
@@ -71,6 +81,13 @@ The evaluation and dashboard both work without a Gemini API key, running on BM25
 - **US corpus**: 116 SEC EDGAR 10-K/10-Q filings from 20 large-cap companies, 18,136 chunks (see `data/sec_filings/manifest.csv`). Public regulatory filings, no license restrictions, re-downloadable via `sec_downloader.py`.
 - **GCC corpus**: Bahrain Bourse annual reports from 7 companies, 845 chunks, for cross-market evaluation.
 - **Evaluation sets**: [FinanceBench](https://arxiv.org/abs/2311.11944) (31 questions matched to the US corpus) for retrieval; 35 hand-verified GCC questions and 19 recent US numerical questions for answer quality.
+
+## Thesis, paper and demonstration
+
+- [`submission/202508993_Thesis.pdf`](submission/202508993_Thesis.pdf), the full thesis
+- [`submission/202508993_Paper_ECIR2027_LNCS.pdf`](submission/202508993_Paper_ECIR2027_LNCS.pdf), a conference length write up in Springer LNCS format
+- [`submission/CyberBoard-AI_Demonstration_Slides.pptx`](submission/CyberBoard-AI_Demonstration_Slides.pptx) and [`submission/CyberBoard-AI_Demonstration_Pack.pdf`](submission/CyberBoard-AI_Demonstration_Pack.pdf)
+- [`docs/EVALUATION_RESULTS.md`](docs/EVALUATION_RESULTS.md), full results and methodology
 
 ## Repository structure
 

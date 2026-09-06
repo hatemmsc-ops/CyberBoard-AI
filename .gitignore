@@ -37,5 +37,8 @@ data/sec_recent/*
 
 __pycache__/
 *.pyc
-.env
 .DS_Store
+
+# Every dotenv variant stays out; only the placeholder template is tracked.
+.env*
+!.env.example
