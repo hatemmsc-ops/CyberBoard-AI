@@ -8,7 +8,6 @@ Deliverables for IT9099 Master's Thesis, MSc Artificial Intelligence, Bahrain Po
 |---|---|---|
 | `202508993_Thesis.pdf` | Final Project Thesis (30%) | 25 August 2026 |
 | `202508993_Paper_ECIR2027_LNCS.pdf` | Essay / Paper (20%), ECIR 2027 LNCS format | due 30 August 2026 |
-| `202508993_SimilarityReport.pdf` | Similarity self-check accompanying the thesis | 25 August 2026 |
 | `CyberBoard-AI_Demonstration_Pack.pdf` | Demonstration and viva pack (30%) | due 31 August 2026 |
 | `CyberBoard-AI_Demonstration_Slides.pptx` | Demonstration slides | due 31 August 2026 |
 
